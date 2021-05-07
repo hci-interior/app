@@ -1,0 +1,27 @@
+#+TITLE: HCI 2021 SS
+
+Lehrveranstaltung: http://vda.univie.ac.at/Teaching/HCI/21s
+- Gruppe: 1
+- Team: 110
+- Projektthema: Interior Designer
+
+Repository enthält:
+
+   - Sourcecode der App
+   - Projekt-Übersicht als org-File (~/docs/index.org~) sowie html-Export davon (https://dominikpegler.github.io/interior-designer) davon 
+   - Präsentationen ([[https://en.wikipedia.org/wiki/Beamer_(LaTeX)][beamer]]) als org-Files (~/docs/~) sowie pdf-Exporte davon
+   - sonstige Unterlagen zu den Aufgaben der LV
+
+
+* Implementierung
+Framework: [React Native]
+
+API-Version: [ ... ]
+
+Gerät(e), auf dem(denen) getestet wurde: [ ... ]
+
+Externe Libraries und Frameworks: [ ... ]
+
+Dauer der Entwicklung: [ XX Stunden ]
+
+Weitere Anmerkungen: [ ... ]
