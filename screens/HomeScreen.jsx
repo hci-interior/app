@@ -11,7 +11,7 @@ class HomeScreen extends React.Component {
         super(props);
 
         this.state = {
-            homedata: [],
+            homedata: [], // this is a list, but it could be a string as well
         }
     }
 
@@ -19,7 +19,7 @@ class HomeScreen extends React.Component {
         return(
             <View>
                 <StatusBar style="auto" />
-                <Text h4 style={{textAlign:'center', margin:8}}>This is the home screen</Text>
+                <Text h4 style={{textAlign:'center', margin:8}}>This is our home screen</Text>
             </View>
         )
     }
