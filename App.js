@@ -13,8 +13,8 @@ class App extends React.Component {
 
     this.state = {
         appdata: [], // this is a list, but it could be a string as well
-      }
-    } 
+    }
+  } 
 
   render(){
 
