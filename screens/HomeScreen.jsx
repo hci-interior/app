@@ -26,7 +26,7 @@ class HomeScreen extends React.Component {
 
                     <ImageBackground source={require("../assets/bg.jpg")} style={styles.backgroundImage}>
                         <StatusBar style="auto" />
-                        <Text style={styles.title}>INTERIOR designer</Text>
+                        <Text style={styles.title}>INTERIORdesigner</Text>
                         <Button type="solid" buttonStyle={styles.Buttons} raised="true" title="Select room" icon={
                             <Icon
                                 name="cube"
@@ -34,7 +34,8 @@ class HomeScreen extends React.Component {
                                 color="white"
                                 style={{margin:8}}
                             />}
-                            onPress={() => this.onPressButton("select a room.")}
+
+                            onPress={() => this.props.navigation.navigate('RoomSelect')}
                         />
                         <Button type="solid" buttonStyle={styles.Buttons} raised="true" title="Scan new room" icon={
                             <Icon
@@ -43,7 +44,7 @@ class HomeScreen extends React.Component {
                                 color="white"
                                 style={{margin:8}}
                             />}
-                            onPress={() => this.onPressButton("scan a new room.")}
+                            onPress={() => this.props.navigation.navigate('RoomScan')}
                         />
                         <Button type="solid" buttonStyle={styles.Buttons} raised="true" title="Select object" icon={
                             <Icon
@@ -52,7 +53,7 @@ class HomeScreen extends React.Component {
                                 color="white"
                                 style={{margin:8}}
                             />}
-                            onPress={() => this.onPressButton("select an object.")}
+                            onPress={() => this.props.navigation.navigate('ObjectSelect')}
                         />
                     </ImageBackground>
 

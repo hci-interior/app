@@ -23,8 +23,6 @@ const styles = StyleSheet.create({
       textAlign: "left",
       width:"100%",
       fontSize:28,
-
-
   },
 
   backgroundImage: {
