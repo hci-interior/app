@@ -17,12 +17,17 @@ const styles = StyleSheet.create({
       position: 'absolute',
       
       margin:0,
-      color: "gray",
-      top:"25%",
-      left:"22%",
+      color: "#ffffff",
+      top:"23%",
+      left:"19%",
       textAlign: "left",
       width:"100%",
       fontSize:28,
+      fontFamily: "Helvetica",
+      
+      textShadowColor: '#555',
+      textShadowOffset: { width: .6, height: .6 },
+      textShadowRadius: 9,
   },
 
   backgroundImage: {
@@ -36,14 +41,14 @@ const styles = StyleSheet.create({
   bottom: {
     flex: 1,
     justifyContent: 'flex-end',
-    marginBottom: 36
+    marginBottom: 2
   },
 
   Buttons: {
     
     // Define your HEX color code here.
     backgroundColor: Colors.colorA,
-    margin: 4,
+    margin: 2,
   
     
   },
