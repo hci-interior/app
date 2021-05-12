@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
       
       margin:0,
       color: "#ffffff",
-      top:"23%",
+      top:"35%",
       left:"19%",
       textAlign: "left",
       width:"100%",
@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
     // Define your HEX color code here.
     backgroundColor: Colors.colorA,
     margin: 2,
+    height:85,
   
     
   },
