@@ -12,6 +12,20 @@ const styles = StyleSheet.create({
     marginTop: 0
   },
 
+  title: {
+
+      position: 'absolute',
+      
+      margin:0,
+      color: "gray",
+      top:"25%",
+      left:"22%",
+      textAlign: "left",
+      width:"100%",
+      fontSize:28,
+
+
+  },
 
   backgroundImage: {
     flex: 1,

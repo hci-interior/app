@@ -26,7 +26,7 @@ class HomeScreen extends React.Component {
 
                     <ImageBackground source={require("../assets/bg.jpg")} style={styles.backgroundImage}>
                         <StatusBar style="auto" />
-                        <Text h4 style={{textAlign:'center', margin:8}}>Vinterior</Text>
+                        <Text style={styles.title}>INTERIOR designer</Text>
                         <Button type="solid" buttonStyle={styles.Buttons} raised="true" title="Select room" icon={
                             <Icon
                                 name="cube"
