@@ -42,7 +42,6 @@ class App extends React.Component {
         options={{ title: '',
           headerStyle: {
             backgroundColor: 'transparent',
-            alignContent:"center"
           },
           headerTintColor: 'grey',
           headerTitleStyle: {
