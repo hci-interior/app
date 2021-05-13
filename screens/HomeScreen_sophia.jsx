@@ -22,7 +22,7 @@ class HomeScreen extends React.Component {
         return (
             <ImageBackground
                 source={require('../assets/bg_sophia.jpg')}
-                style={styles.backgroundImage}>
+                style={styles.backgroundImage_sophia}>
 
                 <StatusBar style="auto"/>
                 <Text style={{
@@ -35,18 +35,18 @@ class HomeScreen extends React.Component {
                 </Text>
 
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomScan')}>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}>Neuen Raum Scannen</Text>
+                    <View style={styles.button_sophia}>
+                        <Text style={styles.buttonText_sophia}>Neuen Raum Scannen</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomSelect')}>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}>Meine Räume</Text>
+                    <View style={styles.button_sophia}>
+                        <Text style={styles.buttonText_sophia}>Meine Räume</Text>
                     </View>
                 </TouchableOpacity>
                 <TouchableOpacity onPress={() => this.props.navigation.navigate('ObjectSelect')}>
-                    <View style={styles.button}>
-                        <Text style={styles.buttonText}>Objekte</Text>
+                    <View style={styles.button_sophia}>
+                        <Text style={styles.buttonText_sophia}>Objekte</Text>
                     </View>
                 </TouchableOpacity>
 
