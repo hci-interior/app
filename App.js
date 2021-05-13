@@ -5,8 +5,8 @@ import HomeScreen from './screens/HomeScreen_sophia';
 import RoomSelectScreen from './screens/RoomSelectScreen_asim';
 import RoomScreen from './screens/RoomScreen_asim';
 import ObjectSelectScreen from './screens/ObjectSelectScreen_asim';
-import RoomScanScreen from './screens/RoomScanScreen';
-import RoomScanConfirmScreen from './screens/RoomScanConfirmScreen';
+import RoomScanScreen from './screens/RoomScanScreen_dmk';
+import RoomScanConfirmScreen from './screens/RoomScanConfirmScreen_dmk';
 
 import { createStackNavigator } from '@react-navigation/stack';
 
