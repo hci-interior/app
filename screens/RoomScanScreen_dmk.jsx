@@ -20,7 +20,7 @@ class RoomScanScreen extends React.Component {
             <View>
                 <StatusBar style="auto" />
                 <Text h4 style={{textAlign:'center', margin:8}}>We are scanning now your room</Text>
-                <Text style={{textAlign:"center",margin:8}}>(Here a video will be shown to demonstrate the scanning process, after 15 minutes it will redirect to the RoomScanConfirmScreen.)</Text>
+                <Text style={{textAlign:"center",margin:8}}>(Here a video will be shown to demonstrate the scanning process, after 15 seconds it will redirect to the RoomScanConfirmScreen.)</Text>
             </View>
         )
     }
