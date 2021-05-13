@@ -20,39 +20,41 @@ class HomeScreen extends React.Component {
 
     render() {
         return (
-            <ImageBackground
-                source={require('../assets/bg_sophia.jpg')}
-                style={styles.backgroundImage_sophia}>
 
-                <StatusBar style="auto"/>
-                <Text style={{
-                    textAlign: 'center',
-                    margin: 25,
-                    fontSize: 35,
-                    fontWeight: 'bold',
-                }}>
-                    INTERIOR DESIGNER
-                </Text>
+            <View style={styles.bottom}>
+                <ImageBackground
+                    source={require('../assets/bg_sophia.jpg')}
+                    style={styles.backgroundImage_sophia}>
 
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomScan')}>
-                    <View style={styles.button_sophia}>
-                        <Text style={styles.buttonText_sophia}>Neuen Raum Scannen</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomSelect')}>
-                    <View style={styles.button_sophia}>
-                        <Text style={styles.buttonText_sophia}>Meine Räume</Text>
-                    </View>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => this.props.navigation.navigate('ObjectSelect')}>
-                    <View style={styles.button_sophia}>
-                        <Text style={styles.buttonText_sophia}>Objekte</Text>
-                    </View>
-                </TouchableOpacity>
+                    <StatusBar style="auto"/>
+                    <Text style={{
+                        textAlign: 'center',
+                        margin: 25,
+                        fontSize: 35,
+                        fontWeight: 'bold',
+                    }}>
+                        INTERIOR DESIGNER
+                    </Text>
+
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomScan')}>
+                        <View style={styles.button_sophia}>
+                            <Text style={styles.buttonText_sophia}>Neuen Raum Scannen</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomSelect')}>
+                        <View style={styles.button_sophia}>
+                            <Text style={styles.buttonText_sophia}>Meine Räume</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ObjectSelect')}>
+                        <View style={styles.button_sophia}>
+                            <Text style={styles.buttonText_sophia}>Objekte</Text>
+                        </View>
+                    </TouchableOpacity>
 
 
-            </ImageBackground>
-            //</View>
+                </ImageBackground>
+            </View>
         );
 
     }
