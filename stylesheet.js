@@ -38,6 +38,28 @@ const styles = StyleSheet.create({
     height: '100%'
   },
 
+  backgroundImage_sophia: {
+    flex: 1,
+    resizeMode: 'cover', // or 'stretch'
+    width: '100%',
+    height: '100%',
+  },
+
+  button_sophia: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 15,
+    margin: 10,
+    borderWidth:1,
+    backgroundColor: "transparent"
+  },
+
+  buttonText_sophia: {
+    color:'black',
+    fontSize:20,
+  },
+
+
   bottom: {
     flex: 1,
     justifyContent: 'flex-end',
