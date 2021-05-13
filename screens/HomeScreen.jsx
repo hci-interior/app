@@ -30,7 +30,7 @@ class HomeScreen extends React.Component {
                         <Button type="solid" buttonStyle={styles.Buttons} raised="true" title="Select room" icon={
                             <Icon
                                 name="cube"
-                                size={25}
+                                size={40}
                                 color="white"
                                 style={{margin:8}}
                             />}
@@ -40,7 +40,7 @@ class HomeScreen extends React.Component {
                         <Button type="solid" buttonStyle={styles.Buttons} raised="true" title="Scan a new room" icon={
                             <Icon
                                 name="video-camera"
-                                size={25}
+                                size={35}
                                 color="white"
                                 style={{margin:8}}
                             />}
@@ -49,7 +49,7 @@ class HomeScreen extends React.Component {
                         <Button type="solid" buttonStyle={styles.Buttons} raised="true" title="Select object" icon={
                             <Icon
                                 name="diamond"
-                                size={25}
+                                size={35}
                                 color="white"
                                 style={{margin:8}}
                             />}
