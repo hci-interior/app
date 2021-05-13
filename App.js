@@ -2,9 +2,9 @@ import React from 'react';
 import { TouchableOpacity, Text, View } from 'react-native';
 import {NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen';
-import RoomSelectScreen from './screens/RoomSelectScreen';
-import RoomScreen from './screens/RoomScreen';
-import ObjectSelectScreen from './screens/ObjectSelectScreen';
+import RoomSelectScreen from './screens/RoomSelectScreen_asim';
+import RoomScreen from './screens/RoomScreen_asim';
+import ObjectSelectScreen from './screens/ObjectSelectScreen_asim';
 import RoomScanScreen from './screens/RoomScanScreen';
 import RoomScanConfirmScreen from './screens/RoomScanConfirmScreen';
 
