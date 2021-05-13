@@ -44,9 +44,19 @@ const styles = StyleSheet.create({
     marginBottom: 2
   },
 
+
+  roundButton: {
+
+    backgroundColor: Colors.colorA,
+    margin: 50,
+    height:50,
+    width: 50,
+    //justifyContent: 'center',
+    //alignContent: 'center',
+  },
+
   Buttons: {
     
-    // Define your HEX color code here.
     backgroundColor: Colors.colorA,
     margin: 2,
     height:85,
