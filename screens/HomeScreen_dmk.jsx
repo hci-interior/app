@@ -16,10 +16,6 @@ class HomeScreen extends React.Component {
         }
     }
 
-    onPressButton(value) {
-        Alert.alert (`You clicked the button to get to ${value}`)
-        }
-
     render() {        
         return(
                 <View style={styles.bottom}>
