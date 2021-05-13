@@ -18,7 +18,8 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-        appdata: [], // this is a list, but it could be a string as well
+        rooms:[{id:0,name:"wohnzimmer_abc",img:"wohnzimmer_abc.png"},{id:1,name:"arbeitsraum",img:"arbeitsraunm.png"},{id:2,name:"wohnzimmer_ab2",img:"wohnzimmer_ab2.png"}],
+        some_other_appdata: [], // this is a list, but it could be a string as well
     }
   } 
 
@@ -31,36 +32,53 @@ class App extends React.Component {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
+        options={{ title: 'Home',headerShown:false }}
         //initialParams={}
       />
 
       <Stack.Screen
         name="RoomSelect"
         component={RoomSelectScreen}
+        options={{ title: '',
+          headerStyle: {
+            backgroundColor: 'transparent',
+            alignContent:"center"
+          },
+          headerTintColor: 'grey',
+          headerTitleStyle: {
+            // fontWeight: 'bold',
+          },
+        }}
         //initialParams={}
       />
 
       <Stack.Screen
         name="Room"
         component={RoomScreen}
+        options={{ title: '' }}
+        //options={{headerShown:false}}
         //initialParams={}
       />
 
       <Stack.Screen
         name="ObjectSelect"
         component={ObjectSelectScreen}
+        options={{ title: '' }}
         //initialParams={}
       />
 
       <Stack.Screen
         name="RoomScan"
         component={RoomScanScreen}
+        //options={{headerShown:false}}
+        options={{ title: '' }}
         //initialParams={}
       />
 
       <Stack.Screen
         name="RoomScanConfirm"
         component={RoomScanConfirmScreen}
+        options={{ title: '' }}
         //initialParams={}
       />
 
