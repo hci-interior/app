@@ -99,7 +99,7 @@ export default class ObjectSelectScreen extends Component{
                             </View>
                         </TouchableOpacity>
                     )}
-                    keyExtractor={item => item.id}
+                    keyExtractor={item => item.id.toString() }
                     ListHeaderComponent={this.renderHeader}
                 />
             </View>
