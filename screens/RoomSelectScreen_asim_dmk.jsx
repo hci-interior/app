@@ -1,42 +1,107 @@
 import React from 'react';
 import {Component} from 'react';
-import { ImageBackground, View, Button, StyleSheet, Image} from 'react-native';
-import { Text } from 'react-native-elements';
+import { FlatList, TouchableOpacity, ImageBackground, View, Button, StyleSheet, Image} from 'react-native';
+import { Text, Input } from 'react-native-elements';
 import styles from '../stylesheet';
 
 export default class RoomSelectScreen extends Component{
+
+
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            //room_id:props.route.params.room_id,
+            rooms:props.route.params.rooms,
+            filteredRooms:props.route.params.rooms,
+    };
+};
+
+    contains = (room, query) => {
+        if (
+            room.includes(query) 
+        ) {
+            return true
+        }
+        return false
+    }
+
+    searchFilterFunction = text => {    
+        const newData = this.state.rooms.filter(item => {      
+          const itemData = `${item.name.toUpperCase()}   
+          ${item.name.toUpperCase()} ${item.name.toUpperCase()}`;
+          
+           const textData = text.toUpperCase();
+            
+           return itemData.indexOf(textData) > -1;    
+        });
+        
+        this.setState({ filteredRooms: newData });  
+      };
+      
+    renderHeader = () => (
+        <View
+            style={{
+            backgroundColor: '#fff',
+            padding: 8,
+            margin: 8,
+            borderRadius: 16,
+            alignItems: 'center',
+            justifyContent: 'center'
+            }}>
+            <Input
+                autoCapitalize='none'
+                autoCorrect={false}
+                onChangeText={text => this.searchFilterFunction(text)}
+                status='info'
+                placeholder='Search room'
+                style={{
+                    borderRadius: 18,
+                    borderColor: '#333',
+                    backgroundColor: '#fff'
+                }}
+                textStyle={{ color: '#000' }}
+                clearButtonMode='always'
+            />
+        </View>
+    )
+
     render(){
+
         return(
-            <View  View style={{flex:1, }}>
-                <View  style={{width: '100%', height: '50%',  justifyContent: "center",alignItems: "center"}}>
-                    <Image source={{uri: "https://images.pexels.com/photos/6489107/pexels-photo-6489107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}} style={{ resizeMode: 'cover', width: '100%', height: '100%',  opacity: 0.7}}/>
-                        <View style={{ position: 'absolute'}}>
-                            <Button title={"Select Room"}
-                                onPress={()=> this.props.navigation.navigate("Room", {u: "https://images.pexels.com/photos/6489107/pexels-photo-6489107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"})}
-                            />
-                            <Text>{"\n"}</Text>
-                        </View>
-                </View>
+            <View style={styles.container}>
+                <FlatList
+                    data={this.state.filteredRooms}
+                    renderItem={({ item }) => (
+                          
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Room', {room_id:item.id,room_img:item.img,room_name:item.name})}>
 
-                <View  style={{width: '100%', height: '50%',  justifyContent: "center",alignItems: "center"}}>
-                    <Image source={{uri: "https://images.pexels.com/photos/271649/pexels-photo-271649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}} style={{ resizeMode: 'cover', width: '100%', height: '100%',  opacity: 0.7}}/>
-                        <View style={{ position: 'absolute'}}>
-                            <Button title={"Select Room"}
-                                onPress={()=> this.props.navigation.navigate("Room", {u: "https://images.pexels.com/photos/271649/pexels-photo-271649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"})}
-                            />
-                            <Text>{"\n"}</Text>
-                        </View>
-                </View>
+                            <View
+                                style={{
+                                flexDirection: 'row',
+                                padding: 12,
+                                alignItems: 'center',
+                                backgroundColor: 'white',
+                                }}
+                            >
+                                <Image
+                                    style={{ width: 100, height: 100, borderRadius:8 }}
+                                    source={ item.img }
 
-                <View  style={{width: '100%', height: '50%',  justifyContent: "center",alignItems: "center"}}>
-                    <Image source={{uri: "https://images.pexels.com/photos/803908/pexels-photo-803908.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}} style={{ resizeMode: 'cover', width: '100%', height: '100%',  opacity: 0.7}}/>
-                        <View style={{ position: 'absolute'}}>
-                            <Button title={"Select Room"}
-                                onPress={()=> this.props.navigation.navigate("Room", {u: "https://images.pexels.com/photos/803908/pexels-photo-803908.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"})}
-                            />
-                            <Text>{"\n"}</Text>
-                        </View>
-                </View>
+                                />
+                                <Text
+                                category='s1'
+                                style={{
+                                    color: '#222222',
+                                    marginLeft: 14,
+                                    fontSize: 20,
+                                }}>{`${item.name}`}</Text>
+                            </View>
+                        </TouchableOpacity>
+                    )}
+                    keyExtractor={item => item.id}
+                    ListHeaderComponent={this.renderHeader}
+                />
             </View>
         );
     }

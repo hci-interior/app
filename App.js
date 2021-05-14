@@ -18,8 +18,15 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-        rooms:[{id:0,name:"wohnzimmer_abc",img:"wohnzimmer_abc.png"},{id:1,name:"arbeitsraum",img:"arbeitsraunm.png"},{id:2,name:"wohnzimmer_ab2",img:"wohnzimmer_ab2.png"}],
-        objects:[{id:0,name:'chair',img:require('./assets/chair.png')},{id:1,name:"closet",img:require('./assets/closet.png')},{id:2,name:'dresser',img:require('./assets/dresser.png')}],
+        rooms:[
+          {id:0,name:"Wohnzimmer von Asim",img:{uri: "https://images.pexels.com/photos/6489107/pexels-photo-6489107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}},
+          {id:1,name:"Arbeitsraum Sophia",img:{uri: "https://images.pexels.com/photos/271649/pexels-photo-271649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}},
+          {id:2,name:"Wohnzimmer Dominik",img:{uri: "https://images.pexels.com/photos/803908/pexels-photo-803908.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}}
+        ],
+        objects:[
+          {id:0,name:'chair',img:require('./assets/chair.png')},
+          {id:1,name:"closet",img:require('./assets/closet.png')},
+          {id:2,name:'dresser',img:require('./assets/dresser.png')}],
         some_other_appdata: [], // this is a list, but it could be a string as well
     }
   } 
@@ -49,6 +56,7 @@ class App extends React.Component {
             // fontWeight: 'bold',
           },
         }}
+        initialParams={{rooms:this.state.rooms}}
         //initialParams={}
       />
 
