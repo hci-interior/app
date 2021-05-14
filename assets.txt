@@ -1,0 +1,3 @@
+Damit in github nur der sourcecode liegt, sind assets online ab sofort getrennt im google drive folder hci/assets
+
+Diese von dort einfach in euer lokales Repository unter app/assets einfügen.
