@@ -124,7 +124,30 @@ const styles = StyleSheet.create({
     // Define your HEX color code here.
     backgroundColor : Colors.colorD
     
-  }
+  },
+
+  containerScan: {
+    flex: 1,
+    flexDirection: 'column',
+    backgroundColor: 'black',
+  },
+  preview: {
+    flex: 1,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  capture: {
+    flex: 0,
+    backgroundColor: 'transparent',
+    padding: 15,
+    paddingHorizontal: 20,
+    alignSelf: 'center',
+    margin: 20,
+    borderWidth: 1,
+    borderColor:'white',
+  },
+
+
 
 });
 
