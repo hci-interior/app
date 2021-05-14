@@ -8,7 +8,7 @@ import styles from '../stylesheet';
 export default class Room extends Component{
     constructor(props){
         super(props);
-        this.u = this.props.route.params.u;
+        this.room_img = this.props.route.params.room_img;
         this.bottom = this.props.route.params.object_img;
         this.state = {
         };
@@ -16,7 +16,7 @@ export default class Room extends Component{
     render(){
         return(
             <View  View style={{flex:1, }} >
-                <ImageBackground source={{uri: this.u}} style={{width: '100%', height: '100%', justifyContent:'flex-end'}}>
+                <ImageBackground source={this.room_img} style={{width: '100%', height: '100%', justifyContent:'flex-end'}}>
                 
                 <View style={{flexDirection:'row'}}>
 
