@@ -9,7 +9,7 @@ export default class Room extends Component{
     constructor(props){
         super(props);
         this.u = this.props.route.params.u;
-        this.bottom = this.props.route.params.b;
+        this.bottom = this.props.route.params.object_img;
         this.state = {
         };
     }

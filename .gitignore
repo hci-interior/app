@@ -9,6 +9,13 @@ npm-debug.*
 *.orig.*
 web-build/
 *.log
+*.png
+*.jpg
+*.PNG
+*.png
+*.bmp
+*.BMP
+assets/
 
 # macOS
 .DS_Store
