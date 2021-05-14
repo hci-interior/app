@@ -1,12 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import styles from '../stylesheet';
-import {View, TouchableOpacity, Image, Button, ImageBackground,} from 'react-native';
-import SplashScreen from  "react-native-splash-screen";
-import { Text, Input } from 'react-native-elements';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-
+import {View, TouchableOpacity, ImageBackground,} from 'react-native';
+import { Text } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import RoundButton from '../components/RoundButton'
 
 class HomeScreen extends React.Component {
 
@@ -21,10 +19,11 @@ class HomeScreen extends React.Component {
     render() {
         return (
 
-            <View style={styles.bottom}>
+            <View style={styles.homeScreenContainer}>
                 <ImageBackground
                     source={require('../assets/bg_sophia.jpg')}
                     style={styles.backgroundImage_sophia}>
+                        
 
                     <StatusBar style="auto"/>
                     <Text style={{
@@ -35,7 +34,7 @@ class HomeScreen extends React.Component {
                     }}>
                         INTERIOR DESIGNER
                     </Text>
-
+                    <View style={styles.bottom}>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomScan')}>
                         <View style={styles.button_sophia}>
                             <Text style={styles.buttonText_sophia}>Neuen Raum Scannen</Text>
@@ -51,8 +50,7 @@ class HomeScreen extends React.Component {
                             <Text style={styles.buttonText_sophia}>Objekte</Text>
                         </View>
                     </TouchableOpacity>
-
-
+                    </View>
                 </ImageBackground>
             </View>
         );
