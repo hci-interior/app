@@ -12,6 +12,12 @@ const styles = StyleSheet.create({
     marginTop: 0
   },
 
+  homeScreenContainer: {
+    flex: 1,
+    backgroundColor: '#ffffff',
+    marginTop: 0
+  },
+
   title: {
 
       position: 'absolute',
@@ -48,10 +54,12 @@ const styles = StyleSheet.create({
   button_sophia: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 15,
-    margin: 10,
-    borderWidth:1,
-    backgroundColor: "transparent"
+    padding: 30,
+    margin: 1,
+    //borderTopWidth:0.0,
+    //borderColor:"gray",
+    backgroundColor: "white",
+    opacity: 0.6
   },
 
   buttonText_sophia: {
@@ -75,6 +83,18 @@ const styles = StyleSheet.create({
     width: 50,
     //justifyContent: 'center',
     //alignContent: 'center',
+  },
+
+  roundButton2: {
+    marginTop: 20,
+    width: 110,
+    height: 110,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 100,
+    opacity: 0.9,
+    backgroundColor: '#ccc',
   },
 
   Buttons: {
