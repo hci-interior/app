@@ -19,6 +19,7 @@ class App extends React.Component {
 
     this.state = {
         rooms:[{id:0,name:"wohnzimmer_abc",img:"wohnzimmer_abc.png"},{id:1,name:"arbeitsraum",img:"arbeitsraunm.png"},{id:2,name:"wohnzimmer_ab2",img:"wohnzimmer_ab2.png"}],
+        objects:[{id:0,name:'chair',img:require('./assets/chair.png')},{id:1,name:"closet",img:require('./assets/closet.png')},{id:2,name:'dresser',img:require('./assets/dresser.png')}],
         some_other_appdata: [], // this is a list, but it could be a string as well
     }
   } 
@@ -63,7 +64,7 @@ class App extends React.Component {
         name="ObjectSelect"
         component={ObjectSelectScreen}
         options={{ title: '' }}
-        //initialParams={}
+        initialParams={{objects:this.state.objects}}
       />
 
       <Stack.Screen
