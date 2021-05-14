@@ -78,28 +78,32 @@ export default class RoomSelectScreen extends Component{
 
                             <View
                                 style={{
-                                flexDirection: 'row',
+                                flexDirection: 'column',
                                 padding: 12,
                                 alignItems: 'center',
                                 backgroundColor: 'white',
                                 }}
                             >
-                                <Image
-                                    style={{ width: 100, height: 100, borderRadius:8 }}
-                                    source={ item.img }
 
-                                />
-                                <Text
+                            <Text
                                 category='s1'
                                 style={{
                                     color: '#222222',
-                                    marginLeft: 14,
+                                    margin: 6,
                                     fontSize: 20,
-                                }}>{`${item.name}`}</Text>
+                                }}>{`${item.name}`}
+                            </Text>
+
+                                <Image
+                                    style={{ width: 300, height: 200, borderRadius:8 }}
+                                    source={ item.img }
+
+                                />
                             </View>
                         </TouchableOpacity>
                     )}
-                    keyExtractor={item => item.id}
+                    keyExtractor={item => item.id.toString() }
+
                     ListHeaderComponent={this.renderHeader}
                 />
             </View>
