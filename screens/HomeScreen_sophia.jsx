@@ -21,7 +21,7 @@ class HomeScreen extends React.Component {
 
             <View style={styles.homeScreenContainer}>
                 <ImageBackground
-                    source={require('../assets/bg_sophia.jpg')}
+                    source={require('../assets/bg_sophia_2.jpg')}
                     style={styles.backgroundImage_sophia}>
                         
 

@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import {
+    StyleSheet,
+    Dimensions,
     View,
     TouchableOpacity,
+    SafeAreaView,
 } from "react-native";
 import { Text, Input } from 'react-native-elements';
 import { Camera } from "expo-camera";
 import styles from "../stylesheet";
-import * as ScreenOrientation from 'expo-screen-orientation';
+import SplashScreen from  "react-native-splash-screen";
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+//import styles from "../stylesheet";
+//import HomeScreen from "./HomeScreen";
+import Orientation from 'react-native-orientation';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 class RoomScanScreen extends React.Component {
 constructor(props) {
@@ -14,15 +23,15 @@ constructor(props) {
 
     this.state = {
         roomscandata: [],
-        orientation:ScreenOrientation.OrientationLock.LANDSCAPE,
     }
 }
 
 componentDidMount(){
+   // Orientation.lockToLandscape();
     // Start counting when the page is loaded
     this.timeoutHandle = setTimeout(()=>{
         this.props.navigation.navigate('RoomScanConfirm')
-    }, 5000);
+    }, 2000);
 }
 
 componentWillUnmount(){
@@ -39,10 +48,26 @@ render() {
                 style={styles.preview}
                 type={Camera.Constants.Type.back}
             />
-            <View >
-                <Text style={{justifyContent: 'center',alignSelf: 'center',fontSize: 14, color:'white', }}> Capture your Room </Text>
-                <TouchableOpacity onPress={ this.takePicture.bind(this)} style={styles.capture}>
-                    <Text style={{ fontSize: 14, color: 'white', }}> SNAP </Text>
+            <View style={{flex:1,flexDirection:'column'}}>
+                <View style={{flex:1, flexDirection:'row'}}>
+                <Icon
+                    name="angle-double-left"
+                    size={60}
+                    color="white"
+                    style={{
+                        flex:1,
+                    }}/>
+                <Icon
+                    name="angle-double-right"
+                    size={60}
+                    color="white"
+                    style={{
+                        flex:1,
+                        justifyContent:'flex-end',
+                    }}/>
+                </View>
+                <TouchableOpacity onPress={ this.takePicture.bind(this)} style={styles.button_sophia}>
+                    <Text style={{ fontSize: 14, color: 'white', }}> Capture your Room </Text>
                 </TouchableOpacity>
             </View>
         </View>
