@@ -24,7 +24,7 @@ class HomeScreen extends React.Component {
                     source={require('../assets/bg_dmk.png')}
                     style={styles.backgroundImage}>
                     <StatusBar style="auto"/>
-                    <Text style={{
+                    {/* <Text style={{
                         textAlign: 'center',
                         margin: 25,
                         fontSize: 35,
@@ -32,7 +32,14 @@ class HomeScreen extends React.Component {
                         color: '#434',
                     }}>
                         INTERIOR DESIGNER
-                    </Text>
+                    </Text> */}
+
+                    <Image
+                        style={{marginTop:95 , width:218,height: 210, alignSelf:"center"}}
+                        source={require("../assets/interior-designer-logo.png")}
+                    />
+
+
                     <View style={styles.bottom}>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomScan')}>
                         <View style={styles.button_sophia}>
