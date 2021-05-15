@@ -1,20 +1,11 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import {
-    StyleSheet,
-    Dimensions,
     View,
     TouchableOpacity,
-    SafeAreaView,
 } from "react-native";
 import { Text, Input } from 'react-native-elements';
 import { Camera } from "expo-camera";
 import styles from "../stylesheet";
-import SplashScreen from  "react-native-splash-screen";
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-//import styles from "../stylesheet";
-//import HomeScreen from "./HomeScreen";
-import Orientation from 'react-native-orientation';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 class RoomScanScreen extends React.Component {
@@ -27,7 +18,6 @@ constructor(props) {
 }
 
 componentDidMount(){
-   // Orientation.lockToLandscape();
     // Start counting when the page is loaded
     this.timeoutHandle = setTimeout(()=>{
         this.props.navigation.navigate('RoomScanConfirm')

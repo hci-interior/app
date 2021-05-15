@@ -2,7 +2,6 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import styles from '../stylesheet';
 import { View, TouchableOpacity, Image } from 'react-native';
-import SplashScreen from  "react-native-splash-screen";
 import { Text, Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
