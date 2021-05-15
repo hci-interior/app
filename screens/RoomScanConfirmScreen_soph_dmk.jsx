@@ -2,8 +2,9 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import styles from '../stylesheet';
 import { View, TouchableOpacity, Image } from 'react-native';
-import SplashScreen from  "react-native-splash-screen";
 import { Text, Input } from 'react-native-elements';
+import RoundCancelButton from '../components/RoundCancelButton'
+import RoundConfirmButton from '../components/RoundConfirmButton'
 
 class RoomScanConfirmScreen extends React.Component {
 
@@ -19,7 +20,13 @@ class RoomScanConfirmScreen extends React.Component {
         return(
             <View>
                 <StatusBar style="auto" />
-                <Text h4 style={{textAlign:'center', margin:8}}>This is the scan confirmation screen</Text>
+                <Text h4 style={{textAlign:'center', margin:8}}>Is this your room?</Text>
+                <View style={{flexDirection:'row', justifyContent:"space-evenly"}}>
+                <RoundCancelButton/>                
+                <RoundConfirmButton/>
+                </View>
+                
+
             </View>
         )
     }

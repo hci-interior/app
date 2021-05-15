@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import styles from '../stylesheet';
-import {View, TouchableOpacity, ImageBackground,} from 'react-native';
+import {View, Image, TouchableOpacity, ImageBackground,} from 'react-native';
 import { Text } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import RoundButton from '../components/RoundButton'
@@ -21,16 +21,15 @@ class HomeScreen extends React.Component {
 
             <View style={styles.homeScreenContainer}>
                 <ImageBackground
-                    source={require('../assets/bg_sophia_2.jpg')}
-                    style={styles.backgroundImage_sophia}>
-                        
-
+                    source={require('../assets/bg_dmk.png')}
+                    style={styles.backgroundImage}>
                     <StatusBar style="auto"/>
                     <Text style={{
                         textAlign: 'center',
                         margin: 25,
                         fontSize: 35,
-                        fontWeight: 'bold',
+                        fontWeight: '',
+                        color: '#434',
                     }}>
                         INTERIOR DESIGNER
                     </Text>

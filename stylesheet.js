@@ -97,6 +97,30 @@ const styles = StyleSheet.create({
     backgroundColor: '#ccc',
   },
 
+  roundCancelButton: {
+    marginTop: 20,
+    width: 110,
+    height: 110,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 100,
+    opacity: 0.9,
+    backgroundColor: Colors.colorB,
+  },
+
+  roundConfirmButton: {
+    marginTop: 20,
+    width: 110,
+    height: 110,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 100,
+    opacity: 0.9,
+    backgroundColor: Colors.colorC,
+  },
+
   Buttons: {
     
     backgroundColor: Colors.colorA,
