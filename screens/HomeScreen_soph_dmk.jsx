@@ -4,7 +4,7 @@ import styles from '../stylesheet';
 import {View, Image, TouchableOpacity, ImageBackground,} from 'react-native';
 import { Text } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import RoundButton from '../components/RoundButton'
+import {Colors} from '../colors.js';
 
 class HomeScreen extends React.Component {
 
@@ -35,7 +35,7 @@ class HomeScreen extends React.Component {
                     </Text> */}
 
                     <Image
-                        style={{marginTop:95 , width:218,height: 210, alignSelf:"center"}}
+                        style={{marginTop:105 , width:209.5,height: 146.5, alignSelf:"center"}}
                         source={require("../assets/interior-designer-logo.png")}
                     />
 
@@ -43,17 +43,38 @@ class HomeScreen extends React.Component {
                     <View style={styles.bottom}>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomScan')}>
                         <View style={styles.button_sophia}>
-                            <Text style={styles.buttonText_sophia}>Neuen Raum Scannen</Text>
+                            <Icon
+                                name="video-camera"
+                                size={35}
+                                color={Colors.colorA}
+                                style={{margin:2}}
+                            />
+                            <Text style={styles.buttonText_sophia}>Scan New Room</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomSelect')}>
                         <View style={styles.button_sophia}>
-                            <Text style={styles.buttonText_sophia}>Meine Räume</Text>
+
+                           <Icon
+                                name="cube"
+                                size={40}
+                                color={Colors.colorA}
+                                style={{margin:2}}
+                            />
+
+                            <Text style={styles.buttonText_sophia}>My Rooms</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('ObjectSelect')}>
                         <View style={styles.button_sophia}>
-                            <Text style={styles.buttonText_sophia}>Objekte</Text>
+
+                            <Icon
+                                    name="diamond"
+                                    size={35}
+                                    color={Colors.colorA}
+                                    style={{margin:2}}
+                                />
+                            <Text style={styles.buttonText_sophia}>My Objects</Text>
                         </View>
                     </TouchableOpacity>
                     </View>

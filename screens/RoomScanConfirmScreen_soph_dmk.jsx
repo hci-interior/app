@@ -29,8 +29,7 @@ class RoomScanConfirmScreen extends React.Component {
         return(
             <View>
                 <StatusBar style="auto" />
-                <Text h4 style={{textAlign:'center', margin:8}}>Scanning result</Text>
-                <Text h3 style={{textAlign:'center', margin:8}}>Is this your room?</Text>
+                <Text h3 style={{textAlign:'center', margin:16}}>Is this your room?</Text>
                 
                 <Image
                     style={{ width: 340, height: 340, alignSelf:"center"}}

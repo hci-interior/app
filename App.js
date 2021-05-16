@@ -1,14 +1,15 @@
 import React from 'react';
 import { TouchableOpacity, Text, View } from 'react-native';
 import {NavigationContainer, DefaultTheme } from '@react-navigation/native';
-import HomeScreen from './screens/HomeScreen_sophia';
+import HomeScreen from './screens/HomeScreen_soph_dmk';
 import RoomSelectScreen from './screens/RoomSelectScreen_asim_dmk';
 import RoomScreen from './screens/RoomScreen_asim';
 import ObjectSelectScreen from './screens/ObjectSelectScreen_asim_dmk';
 import RoomScanScreen from './screens/RoomScanScreen_sophia';
 import RoomScanConfirmScreen from './screens/RoomScanConfirmScreen_soph_dmk';
-
 import { createStackNavigator } from '@react-navigation/stack';
+import {Colors} from './colors.js';
+//import { Colors } from 'react-native/Libraries/NewAppScreen';
 
 const Stack = createStackNavigator();
 
@@ -47,11 +48,11 @@ class App extends React.Component {
       <Stack.Screen
         name="RoomSelect"
         component={RoomSelectScreen}
-        options={{ title: '',
+        options={{ title: 'Selecting a room',
           headerStyle: {
-            backgroundColor: 'transparent',
+            backgroundColor: Colors.colorA,
           },
-          headerTintColor: 'grey',
+          headerTintColor: 'white',
           headerTitleStyle: {
             // fontWeight: 'bold',
           },
@@ -63,30 +64,69 @@ class App extends React.Component {
       <Stack.Screen
         name="Room"
         component={RoomScreen}
-        options={{ title: '' }}
-        //options={{headerShown:false}}
+        options={
+          { title: '',
+          headerStyle: {
+            backgroundColor: Colors.colorA,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            // fontWeight: 'bold',
+          },
+          headerShown: true
+        }}
         //initialParams={}
       />
 
       <Stack.Screen
         name="ObjectSelect"
         component={ObjectSelectScreen}
-        options={{ title: '' }}
         initialParams={{objects:this.state.objects}}
+        options={
+          { title: 'Selecting an object',
+          headerStyle: {
+            backgroundColor: Colors.colorA,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            // fontWeight: 'bold',
+          },
+          headerShown: true
+        }}
       />
 
       <Stack.Screen
         name="RoomScan"
         component={RoomScanScreen}
         //options={{headerShown:false}}
-        options={{ title: '' }}
+        options={
+          { title: 'Scanning',
+          headerStyle: {
+            backgroundColor: Colors.colorA,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            // fontWeight: 'bold',
+          },
+          headerShown: true
+        }}
         //initialParams={}
       />
 
       <Stack.Screen
         name="RoomScanConfirm"
         component={RoomScanConfirmScreen}
-        options={{ title: '' }}
+        options={
+          { title: 'Scanning results',
+          headerStyle: {
+            backgroundColor: Colors.colorA,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            // fontWeight: 'bold',
+          },
+          headerShown: true
+        }}
         //initialParams={}
       />
 

@@ -54,16 +54,16 @@ const styles = StyleSheet.create({
   button_sophia: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 30,
+    padding: 16,
     margin: 1,
     //borderTopWidth:0.0,
     //borderColor:"gray",
     backgroundColor: "white",
-    opacity: 0.6
+    opacity: 0.7
   },
 
   buttonText_sophia: {
-    color:'black',
+    color:Colors.black,
     fontSize:20,
   },
 
