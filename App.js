@@ -1,5 +1,5 @@
 import React from 'react';
-import { TouchableOpacity, Text, View } from 'react-native';
+import { Button } from 'react-native-elements';
 import {NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen_soph_dmk';
 import RoomSelectScreen from './screens/RoomSelectScreen_asim_dmk';
@@ -9,7 +9,8 @@ import RoomScanScreen from './screens/RoomScanScreen_sophia';
 import RoomScanConfirmScreen from './screens/RoomScanConfirmScreen_soph_dmk';
 import { createStackNavigator } from '@react-navigation/stack';
 import {Colors} from './colors.js';
-//import { Colors } from 'react-native/Libraries/NewAppScreen';
+import HeaderMenuButton from './components/HeaderMenuButton'
+import HeaderHomeButton from './components/HeaderHomeButton'
 
 const Stack = createStackNavigator();
 
@@ -41,14 +42,21 @@ class App extends React.Component {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
-        options={{ title: 'Home',headerShown:false }}
+        options={{ 
+          headerTitleAlign:'center',
+          title: "",
+          headerShown:true,
+          headerLeft: () => (<HeaderMenuButton/>),
+        }}
         //initialParams={}
       />
 
       <Stack.Screen
         name="RoomSelect"
         component={RoomSelectScreen}
-        options={{ title: 'Selecting a room',
+        options={{
+          title: 'Selecting a room',
+          headerTitleAlign:'center',
           headerStyle: {
             backgroundColor: Colors.colorA,
           },
@@ -56,6 +64,7 @@ class App extends React.Component {
           headerTitleStyle: {
             // fontWeight: 'bold',
           },
+          headerRight: () => (<HeaderHomeButton/>),
         }}
         initialParams={{rooms:this.state.rooms}}
         //initialParams={}
@@ -64,8 +73,9 @@ class App extends React.Component {
       <Stack.Screen
         name="Room"
         component={RoomScreen}
-        options={
-          { title: '',
+        options={{
+          title: '',
+          headerTitleAlign:'center',
           headerStyle: {
             backgroundColor: Colors.colorA,
           },
@@ -73,7 +83,8 @@ class App extends React.Component {
           headerTitleStyle: {
             // fontWeight: 'bold',
           },
-          headerShown: true
+          headerShown: true,
+          headerRight: () => (<HeaderHomeButton/>),
         }}
         //initialParams={}
       />
@@ -82,8 +93,9 @@ class App extends React.Component {
         name="ObjectSelect"
         component={ObjectSelectScreen}
         initialParams={{objects:this.state.objects}}
-        options={
-          { title: 'Selecting an object',
+        options={{
+          title: 'Selecting an object',
+          headerTitleAlign:'center',
           headerStyle: {
             backgroundColor: Colors.colorA,
           },
@@ -91,7 +103,8 @@ class App extends React.Component {
           headerTitleStyle: {
             // fontWeight: 'bold',
           },
-          headerShown: true
+          headerShown: true,
+          headerRight: () => (<HeaderHomeButton/>),
         }}
       />
 
@@ -99,8 +112,9 @@ class App extends React.Component {
         name="RoomScan"
         component={RoomScanScreen}
         //options={{headerShown:false}}
-        options={
-          { title: 'Scanning',
+        options={{
+          title: 'Scanning',
+          headerTitleAlign:'center',
           headerStyle: {
             backgroundColor: Colors.colorA,
           },
@@ -108,7 +122,8 @@ class App extends React.Component {
           headerTitleStyle: {
             // fontWeight: 'bold',
           },
-          headerShown: true
+          headerShown: true,
+          headerRight: () => (<HeaderHomeButton/>),
         }}
         //initialParams={}
       />
@@ -116,8 +131,9 @@ class App extends React.Component {
       <Stack.Screen
         name="RoomScanConfirm"
         component={RoomScanConfirmScreen}
-        options={
-          { title: 'Scanning results',
+        options={{
+          title: 'Scanning results',
+          headerTitleAlign:'center',
           headerStyle: {
             backgroundColor: Colors.colorA,
           },
@@ -125,7 +141,8 @@ class App extends React.Component {
           headerTitleStyle: {
             // fontWeight: 'bold',
           },
-          headerShown: true
+          headerShown: true,
+          headerRight: () => (<HeaderHomeButton/>),
         }}
         //initialParams={}
       />
