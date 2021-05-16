@@ -3,13 +3,11 @@ import {
   StyleSheet,
   Text,
   View,
-  StatusBar,
-  Image,
   Platform,
   RefreshControl,
   Switch,
 } from 'react-native'
-// import Icon from 'react-native-vector-icons/Entypo'
+import Colors from '../colors.js'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { SettingsScreen, SettingsData, Chevron } from 'react-native-settings-screen'
@@ -35,9 +33,9 @@ export default class OurSettingsScreen extends React.Component {
     { type: 'CUSTOM_VIEW', key: 'hero', render: renderHero },
     {
       type: 'SECTION',
-      header: 'My Section'.toUpperCase(),
+      header: 'Account settings'.toUpperCase(),
       footer:
-        'Donec sed odio dui. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.',
+        'These settings have currently no effect.',
       rows: [
         {
           title: 'A row',
@@ -73,7 +71,7 @@ export default class OurSettingsScreen extends React.Component {
               style={{
                 width: 30,
                 height: 30,
-                backgroundColor: 'blue',
+                backgroundColor: "lightblue",
               }}
             />
           ),
@@ -83,7 +81,7 @@ export default class OurSettingsScreen extends React.Component {
     },
     {
       type: 'SECTION',
-      header: 'My Other Section'.toUpperCase(),
+      header: 'App settings'.toUpperCase(),
       rows: [
         {
           title: 'Dolor Nullam',
@@ -98,8 +96,8 @@ export default class OurSettingsScreen extends React.Component {
           ),
         },
         {
-          title: 'Ipsum Lorem Venenatis',
-          subtitle: 'Vestibulum Inceptos Fusce Justo',
+          title: 'Enable automatic scan',
+          subtitle: 'Affects battery lifetime',
           renderAccessory: () => (
             <Text style={{ color: '#999', marginRight: 6, fontSize: 18 }}>
               Yes
@@ -108,11 +106,11 @@ export default class OurSettingsScreen extends React.Component {
           showDisclosureIndicator: true,
         },
         {
-          title: 'Cras Euismod',
+          title: 'Sustainability mode',
           renderAccessory: () => (
             <Icon
               style={{ marginTop: 3, marginRight: 6 }}
-              name="colours"
+              name="tree"
               size={32}
               color="black"
             />
@@ -123,10 +121,10 @@ export default class OurSettingsScreen extends React.Component {
     },
     {
       type: 'SECTION',
-      header: 'My Third Section'.toUpperCase(),
+      header: 'Privacy settings'.toUpperCase(),
       rows: [
         {
-          title: 'Different title style',
+          title: 'Privacy settings',
           showDisclosureIndicator: true,
           titleStyle: {
             color: 'red',
@@ -184,19 +182,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
-  navBar: {
-    backgroundColor: '#8c231c',
-    height: 44 + statusBarHeight,
-    alignSelf: 'stretch',
-    paddingTop: statusBarHeight,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  navBarTitle: {
-    color: 'white',
-    fontFamily,
-    fontSize: 17,
-  },
+
   heroContainer: {
     marginTop: 40,
     marginBottom: 50,
@@ -208,14 +194,6 @@ const styles = StyleSheet.create({
     borderBottomWidth: StyleSheet.hairlineWidth,
     borderColor: '#ccc',
     flexDirection: 'row',
-  },
-  heroImage: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    borderWidth: 3,
-    borderColor: 'black',
-    marginHorizontal: 20,
   },
   heroTitle: {
     fontFamily,
