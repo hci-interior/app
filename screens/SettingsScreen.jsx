@@ -28,7 +28,7 @@ const renderHero = () => (
 
 export default class OurSettingsScreen extends React.Component {
   state = {
-    refreshing: false,
+    refreshing: false, 
   }
 
   settingsData: SettingsData = [
