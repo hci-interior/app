@@ -44,7 +44,7 @@ class App extends React.Component {
         component={HomeScreen}
         options={{ 
           headerTitleAlign:'center',
-          headerTite: "home",
+          title: "",
           headerShown:true,
           headerLeft: () => (<HeaderMenuButton/>),
         }}
