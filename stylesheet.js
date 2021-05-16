@@ -54,16 +54,16 @@ const styles = StyleSheet.create({
   button_sophia: {
     alignItems: 'center',
     justifyContent: 'center',
-    padding: 30,
+    padding: 16,
     margin: 1,
     //borderTopWidth:0.0,
     //borderColor:"gray",
     backgroundColor: "white",
-    opacity: 0.6
+    opacity: 0.7
   },
 
   buttonText_sophia: {
-    color:'black',
+    color:Colors.black,
     fontSize:20,
   },
 
@@ -95,6 +95,30 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     opacity: 0.9,
     backgroundColor: '#ccc',
+  },
+
+  roundCancelButton: {
+    marginTop: 20,
+    width: 110,
+    height: 110,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 100,
+    opacity: 0.9,
+    backgroundColor: Colors.colorB,
+  },
+
+  roundConfirmButton: {
+    marginTop: 20,
+    width: 110,
+    height: 110,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 10,
+    borderRadius: 100,
+    opacity: 0.9,
+    backgroundColor: Colors.colorC,
   },
 
   Buttons: {
