@@ -93,7 +93,8 @@ class App extends React.Component {
         name="ObjectSelect"
         component={ObjectSelectScreen}
         initialParams={{objects:this.state.objects}}
-        options={{
+
+        options={({ navigation }) => ({
           title: 'Selecting an object',
           headerTitleAlign:'center',
           headerStyle: {
@@ -104,8 +105,16 @@ class App extends React.Component {
             // fontWeight: 'bold',
           },
           headerShown: true,
-          headerRight: () => (<HeaderHomeButton/>),
-        }}
+          headerRight: () => (
+          <HeaderHomeButton
+          
+            onPress={() => navigation.navigate('Home')}
+
+          />
+          ),
+
+        })}
+
       />
 
       <Stack.Screen
