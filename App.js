@@ -42,19 +42,19 @@ class App extends React.Component {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
-        options={{ 
+        options={({  }) => ({
           headerTitleAlign:'center',
           title: "",
           headerShown:true,
           headerLeft: () => (<HeaderMenuButton/>),
-        }}
+        })}
         //initialParams={}
       />
 
       <Stack.Screen
         name="RoomSelect"
         component={RoomSelectScreen}
-        options={{
+        options={({ navigation }) => ({
           title: 'Selecting a room',
           headerTitleAlign:'center',
           headerStyle: {
@@ -64,8 +64,10 @@ class App extends React.Component {
           headerTitleStyle: {
             // fontWeight: 'bold',
           },
-          headerRight: () => (<HeaderHomeButton/>),
-        }}
+          headerRight: () => (<HeaderHomeButton
+            onPress={() => navigation.navigate('Home')}       
+          />),
+        })}
         initialParams={{rooms:this.state.rooms}}
         //initialParams={}
       />
@@ -73,7 +75,7 @@ class App extends React.Component {
       <Stack.Screen
         name="Room"
         component={RoomScreen}
-        options={{
+        options={({ navigation }) => ({
           title: '',
           headerTitleAlign:'center',
           headerStyle: {
@@ -84,8 +86,11 @@ class App extends React.Component {
             // fontWeight: 'bold',
           },
           headerShown: true,
-          headerRight: () => (<HeaderHomeButton/>),
-        }}
+          headerRight: () => (<HeaderHomeButton
+            onPress={() => navigation.navigate('Home')}
+         
+          />),
+        })}
         //initialParams={}
       />
 
@@ -93,7 +98,8 @@ class App extends React.Component {
         name="ObjectSelect"
         component={ObjectSelectScreen}
         initialParams={{objects:this.state.objects}}
-        options={{
+
+        options={({ navigation }) => ({
           title: 'Selecting an object',
           headerTitleAlign:'center',
           headerStyle: {
@@ -104,15 +110,21 @@ class App extends React.Component {
             // fontWeight: 'bold',
           },
           headerShown: true,
-          headerRight: () => (<HeaderHomeButton/>),
-        }}
+          headerRight: () => (
+          <HeaderHomeButton
+            onPress={() => navigation.navigate('Home')}
+          />
+          ),
+
+        })}
+
       />
 
       <Stack.Screen
         name="RoomScan"
         component={RoomScanScreen}
         //options={{headerShown:false}}
-        options={{
+        options={({ navigation }) => ({
           title: 'Scanning',
           headerTitleAlign:'center',
           headerStyle: {
@@ -123,15 +135,17 @@ class App extends React.Component {
             // fontWeight: 'bold',
           },
           headerShown: true,
-          headerRight: () => (<HeaderHomeButton/>),
-        }}
+          headerRight: () => (<HeaderHomeButton
+            onPress={() => navigation.navigate('Home')}
+          />),
+        })}
         //initialParams={}
       />
 
       <Stack.Screen
         name="RoomScanConfirm"
         component={RoomScanConfirmScreen}
-        options={{
+        options={({ navigation }) => ({
           title: 'Scanning results',
           headerTitleAlign:'center',
           headerStyle: {
@@ -142,8 +156,10 @@ class App extends React.Component {
             // fontWeight: 'bold',
           },
           headerShown: true,
-          headerRight: () => (<HeaderHomeButton/>),
-        }}
+          headerRight: () => (<HeaderHomeButton
+            onPress={() => navigation.navigate('Home')}
+            />),
+        })}
         //initialParams={}
       />
 
