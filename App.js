@@ -45,8 +45,12 @@ class App extends React.Component {
         component={HomeScreen}
         options={({ navigation }) => ({
           headerTitleAlign:'center',
-          title: "",
+          title: "INTERIOR DESIGNER",
           headerShown:true,
+          headerStyle: {
+            backgroundColor: Colors.colorA,
+          },
+          headerTintColor: 'white',
           headerLeft: () => (<HeaderMenuButton
             onPress={() => navigation.navigate('Settings')}       
           />),
