@@ -10,7 +10,7 @@ export default class HeaderMenuButton extends React.Component {
 
     return (
             <Button
-              onPress={() => alert('This is the menu!')}
+              onPress = {this.props.onPress}
               color="#fff"
               buttonStyle={{backgroundColor: Colors.colorA, padding: 16}}
               icon={

@@ -9,8 +9,9 @@ import RoomScanScreen from './screens/RoomScanScreen_sophia';
 import RoomScanConfirmScreen from './screens/RoomScanConfirmScreen_soph_dmk';
 import { createStackNavigator } from '@react-navigation/stack';
 import {Colors} from './colors.js';
-import HeaderMenuButton from './components/HeaderMenuButton'
-import HeaderHomeButton from './components/HeaderHomeButton'
+import HeaderMenuButton from './components/HeaderMenuButton';
+import HeaderHomeButton from './components/HeaderHomeButton';
+import OurSettingsScreen from './screens/SettingsScreen';
 
 const Stack = createStackNavigator();
 
@@ -42,11 +43,13 @@ class App extends React.Component {
       <Stack.Screen
         name="Home"
         component={HomeScreen}
-        options={({  }) => ({
+        options={({ navigation }) => ({
           headerTitleAlign:'center',
           title: "",
           headerShown:true,
-          headerLeft: () => (<HeaderMenuButton/>),
+          headerLeft: () => (<HeaderMenuButton
+            onPress={() => navigation.navigate('Settings')}       
+          />),
         })}
         //initialParams={}
       />
@@ -56,6 +59,27 @@ class App extends React.Component {
         component={RoomSelectScreen}
         options={({ navigation }) => ({
           title: 'Selecting a room',
+          headerTitleAlign:'center',
+          headerStyle: {
+            backgroundColor: Colors.colorA,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            // fontWeight: 'bold',
+          },
+          headerRight: () => (<HeaderHomeButton
+            onPress={() => navigation.navigate('Home')}       
+          />),
+        })}
+        initialParams={{rooms:this.state.rooms}}
+        //initialParams={}
+      />
+
+<Stack.Screen
+        name="Settings"
+        component={OurSettingsScreen}
+        options={({ navigation }) => ({
+          title: 'Settings',
           headerTitleAlign:'center',
           headerStyle: {
             backgroundColor: Colors.colorA,
