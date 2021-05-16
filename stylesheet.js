@@ -171,8 +171,6 @@ const styles = StyleSheet.create({
     borderColor:'white',
   },
 
-
-
 });
 
 export default styles;
