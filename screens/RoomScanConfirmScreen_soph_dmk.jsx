@@ -45,10 +45,10 @@ class RoomScanConfirmScreen extends React.Component {
                     />                
                     <RoundConfirmButton                    
                         onPress={() => {
-                            {this.setState({ confirm_visible: true });
+                            //{this.setState({ confirm_visible: true });
                             this.props.navigation.navigate('Home')
                             }
-                        }}
+                        }
                     />
                     <Dialog
                         visible={this.state.confirm_visible}
