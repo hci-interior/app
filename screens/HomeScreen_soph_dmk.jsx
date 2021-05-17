@@ -20,25 +20,15 @@ class HomeScreen extends React.Component {
         return (
 
             <View style={styles.homeScreenContainer}>
-                {/* <ImageBackground
-                    source={require('../assets/bg_dmk.png')}
-                    style={styles.backgroundImage}> */}
+                <ImageBackground
+                    source={require('../assets/bg_sophia.jpg')}
+                    style={styles.backgroundImage}>
                     <StatusBar style="auto"/>
-                    {/* <Text style={{
-                        textAlign: 'center',
-                        margin: 25,
-                        fontSize: 35,
-                        fontWeight: '',
-                        color: '#434',
-                    }}>
-                        INTERIOR DESIGNER
-                    </Text> */}
 
                     <Image
-                        style={{marginTop:105 , width:209.5,height: 146.5, alignSelf:"center"}}
-                        source={require("../assets/interior-designer-logo.png")}
+                        style={{marginTop:70, marginRight:70, width:260,height: 180, alignSelf:"center"}}
+                        source={require("../assets/logo_soph.png")}
                     />
-
 
                     <View style={styles.bottom}>
                     <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomScan')}>
@@ -78,7 +68,7 @@ class HomeScreen extends React.Component {
                         </View>
                     </TouchableOpacity>
                     </View>
-                {/* </ImageBackground> */}
+                </ImageBackground>
             </View>
         );
 
