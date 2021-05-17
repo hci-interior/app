@@ -16,6 +16,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 //import HomeScreen from "./HomeScreen";
 import Orientation from 'react-native-orientation';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import RoundCancelButton from "../components/RoundCancelButton";
 
 class RoomScanScreen extends React.Component {
 constructor(props) {
@@ -47,8 +48,8 @@ render() {
                 }}
                 style={styles.preview}
                 type={Camera.Constants.Type.back}
-            />
-            <View style={{flex:1,flexDirection:'row',  justifyContent:'center'}}>
+            >
+            <View style={{flex:1,flexDirection:'row',alignItems:'center', justifyContent:'center', backgroundColor:'transparent'}}>
                  <Icon
                     name="angle-double-left"
                     size={60}
@@ -56,6 +57,7 @@ render() {
                     style={{
                         flex:1,
                         paddingLeft:30,
+                        alignContent:'flex-start',
                     }}/>
                 <Icon
                     name="angle-double-right"
@@ -64,22 +66,32 @@ render() {
                     style={{
                         flex:0,
                         paddingRight:30,
+                        alignContent:'flex-end',
                     }}
                    />
-                </View>
-                <TouchableOpacity onPress={ this.takePicture.bind(this)} style={styles.capture}>
-                    <Text style={{ fontSize: 20, color: 'white', }}> Scan your Room </Text>
+
+            </View>
+                <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')} style={styles.cancel}>
+                    <Text style={{ fontSize: 20, color: 'white', }}> Cancel Scan </Text>
+                    <Icon
+                        name="close"
+                        size={40}
+                        color="white"
+                        style={{margin:8}}
+                    />
                 </TouchableOpacity>
+
+                </Camera>
         </View>
     );
 }
-
+/*
 takePicture = async () => {
     if (this.camera) {
         this.setState({
             roomscandata: await this.camera.takePictureAsync(options),
         });
     }
-}
+}*/
 }
 export default RoomScanScreen;
