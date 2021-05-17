@@ -7,18 +7,17 @@ import {
   RefreshControl,
   Switch,
 } from 'react-native'
-import Colors from '../colors.js'
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { SettingsScreen, SettingsData, Chevron } from 'react-native-settings-screen'
 
 const fontFamily = Platform.OS === 'ios' ? 'Avenir' : 'sans-serif'
 
-const renderHero = () => (
-  <View style={styles.heroContainer}>
+const renderAccount = () => (
+  <View style={styles.accountContainer}>
     <View style={{ flex: 1 }}>
-      <Text style={styles.heroTitle}>Testuser*in</Text>
-      <Text style={styles.heroSubtitle}>testuser@pexample.com</Text>
+      <Text style={styles.accountTitle}>Testuser*in</Text>
+      <Text style={styles.accountSubtitle}>testuser@pexample.com</Text>
     </View>
     <Chevron />
   </View>
@@ -30,7 +29,7 @@ export default class OurSettingsScreen extends React.Component {
   }
 
   settingsData: SettingsData = [
-    { type: 'CUSTOM_VIEW', key: 'hero', render: renderHero },
+    { type: 'CUSTOM_VIEW', key: 'account', render: renderAccount },
     {
       type: 'SECTION',
       header: 'Account settings'.toUpperCase(),
@@ -183,7 +182,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
 
-  heroContainer: {
+  accountContainer: {
     marginTop: 40,
     marginBottom: 50,
     paddingVertical: 20,
@@ -195,12 +194,12 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     flexDirection: 'row',
   },
-  heroTitle: {
+  accountTitle: {
     fontFamily,
     color: 'black',
     fontSize: 24,
   },
-  heroSubtitle: {
+  accountSubtitle: {
     fontFamily,
     color: '#999',
     fontSize: 14,

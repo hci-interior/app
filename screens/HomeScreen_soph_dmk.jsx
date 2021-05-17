@@ -20,9 +20,9 @@ class HomeScreen extends React.Component {
         return (
 
             <View style={styles.homeScreenContainer}>
-                <ImageBackground
+                {/* <ImageBackground
                     source={require('../assets/bg_dmk.png')}
-                    style={styles.backgroundImage}>
+                    style={styles.backgroundImage}> */}
                     <StatusBar style="auto"/>
                     {/* <Text style={{
                         textAlign: 'center',
@@ -78,7 +78,7 @@ class HomeScreen extends React.Component {
                         </View>
                     </TouchableOpacity>
                     </View>
-                </ImageBackground>
+                {/* </ImageBackground> */}
             </View>
         );
 

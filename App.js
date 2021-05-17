@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-native-elements';
+import { Text } from 'react-native-elements';
 import {NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen_soph_dmk';
 import RoomSelectScreen from './screens/RoomSelectScreen_asim_dmk';
@@ -25,11 +25,11 @@ class App extends React.Component {
           {id:0,name:"Wohnzimmer von Asim",img:{uri: "https://images.pexels.com/photos/6489107/pexels-photo-6489107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}},
           {id:1,name:"Arbeitsraum Sophia",img:{uri: "https://images.pexels.com/photos/271649/pexels-photo-271649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}},
           {id:2,name:"Wohnzimmer Dominik",img:{uri: "https://images.pexels.com/photos/803908/pexels-photo-803908.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"}},
-          {id:3,name:"Wohnzimmer Dominik",img:require('./assets/rooms/room1.jpg')},
-          {id:4,name:"Wohnzimmer Dominik",img:require('./assets/rooms/room2.jpg')},
-          {id:5,name:"Wohnzimmer Dominik",img:require('./assets/rooms/room3.jpg')},
-          {id:6,name:"Wohnzimmer Dominik",img:require('./assets/rooms/room4.jpg')},
-          {id:7,name:"Wohnzimmer Dominik",img:require('./assets/rooms/room5.png')},
+          {id:3,name:"Kunde Schönbrunner Straße",img:require('./assets/rooms/room1.jpg')},
+          {id:4,name:"Kunde Margarentenstraße",img:require('./assets/rooms/room2.jpg')},
+          {id:5,name:"Kunde Praterstraße",img:require('./assets/rooms/room3.jpg')},
+          {id:6,name:"Kunde Thaliastraße",img:require('./assets/rooms/room4.jpg')},
+          {id:7,name:"Kunde Rennweg",img:require('./assets/rooms/room5.png')},
         ],
         objects:[
           {id:0,name:'bed',img:require('./assets/objects/bed1.png')},
@@ -125,6 +125,7 @@ class App extends React.Component {
           headerRight: () => (<HeaderHomeButton
             onPress={() => navigation.navigate('Home')}       
           />),
+          
         })}
         initialParams={{rooms:this.state.rooms}}
         //initialParams={}
@@ -183,7 +184,7 @@ class App extends React.Component {
         component={RoomScanScreen}
         //options={{headerShown:false}}
         options={({ navigation }) => ({
-          title: 'Scanning',
+          title: 'Scanning ...',
           headerTitleAlign:'center',
           headerStyle: {
             backgroundColor: Colors.colorA,
@@ -196,6 +197,7 @@ class App extends React.Component {
           headerRight: () => (<HeaderHomeButton
             onPress={() => navigation.navigate('Home')}
           />),
+          headerLeft: () => (<Text></Text>),
         })}
         //initialParams={}
       />
@@ -216,7 +218,8 @@ class App extends React.Component {
           headerShown: true,
           headerRight: () => (<HeaderHomeButton
             onPress={() => navigation.navigate('Home')}
-            />),
+          />),
+          headerLeft: () => (<Text></Text>),
         })}
         //initialParams={}
       />

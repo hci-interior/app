@@ -56,8 +56,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 16,
     margin: 1,
-    //borderTopWidth:0.0,
-    //borderColor:"gray",
+    borderTopWidth:0.5,
+    borderColor:Colors.white,
     backgroundColor: "white",
     opacity: 0.7
   },
