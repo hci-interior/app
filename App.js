@@ -34,31 +34,25 @@ class App extends React.Component {
         objects:[
           {id:0,name:'bed',img:require('./assets/objects/bed1.png')},
           {id:1,name:'bed',img:require('./assets/objects/bed2.png')},
-          //{id:2,name:'bed',img:require('./assets/objects/bed3.png')},
-          {id:3,name:'bed',img:require('./assets/objects/bed4.png')},
-  
+          {id:2,name:'bed',img:require('./assets/objects/bed3.png')},
+          {id:3,name:'bed',img:require('./assets/objects/bed4.png')}, 
           {id:4,name:'chair',img:require('./assets/objects/chair.png')},
-          //{id:5,name:'chair',img:require('./assets/objects/chair2.png')},
-          //{id:6,name:'chair',img:require('./assets/objects/chair3.png')},
-
+          {id:5,name:'chair',img:require('./assets/objects/chair2.png')},
+          {id:6,name:'chair',img:require('./assets/objects/chair3.png')},
           {id:7,name:'closet',img:require('./assets/objects/closet.png')},
-          //{id:8,name:'closet',img:require('./assets/objects/closet2.png')},
-          {id:9,name:'closet',img:require('./assets/objects/closet3.png')},
-          
-          //{id:10,name:'couch',img:require('./assets/objects/couch.png')},
-          //{id:11,name:'couch',img:require('./assets/objects/couch2.png')},
-
+          {id:8,name:'closet',img:require('./assets/objects/closet2.png')},
+          {id:9,name:'closet',img:require('./assets/objects/closet3.png')},       
+          {id:10,name:'couch',img:require('./assets/objects/couch.png')},
+          {id:11,name:'couch',img:require('./assets/objects/couch2.png')},
           {id:12,name:'dresser',img:require('./assets/objects/dresser1.png')},
           {id:13,name:'dresser',img:require('./assets/objects/dresser2.png')},
           {id:14,name:'dresser',img:require('./assets/objects/dresser3.png')},
           {id:15,name:'dresser',img:require('./assets/objects/dresser.png')},
-          
           {id:16,name:'table',img:require('./assets/objects/table.png')},
-          //{id:17,name:'table',img:require('./assets/objects/table2.png')},
-          //{id:18,name:'table',img:require('./assets/objects/table3.png')},
-
-          //{id:19,name:'tv',img:require('./assets/objects/tv.png')},
-          //{id:20,name:'tv',img:require('./assets/objects/tv2.png')},
+          {id:17,name:'table',img:require('./assets/objects/table2.png')},
+          {id:18,name:'table',img:require('./assets/objects/table3.png')},
+          {id:19,name:'tv',img:require('./assets/objects/tv.png')},
+          {id:20,name:'tv',img:require('./assets/objects/tv2.png')},
           ],
         some_other_appdata: [], // this is a list, but it could be a string as well
     }
