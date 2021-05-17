@@ -37,19 +37,9 @@ export default class Room extends Component{
                 
                 </View>
                 
-                    <View  style={{width: '100%', height: '20%',alignItems: "center", justifyContent:"center", flexDirection:"row"}}>
-                        <TouchableOpacity style={styles.roundButton}
-                            onPress={()=> this.props.navigation.navigate("ObjectSelect")}
-                            >
-                            <Icon
-                                name="plus"
-                                size={40}
-                                color="white"
-                                style={{margin:8}}
-                            />
+                    <View  style={{width: '100%', height: '20%',alignItems: "center", justifyContent:"space-evenly", flexDirection:"row"}}>
                         
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.roundButton}
+                        <TouchableOpacity style={styles.roomScanButton}
                             onPress={()=> {
                                 this.ary=[];
                                 console.log("ARRAY AFTER DELETE = " + this.ary);
@@ -59,14 +49,25 @@ export default class Room extends Component{
                             }}
                             >
                             <Icon
-                                name="fa-trash-o"
+                                name="trash-o"
                                 size={40}
                                 color="white"
-                                style={{margin:8}}
+                                style={{margin:0}}
                             />
                         </TouchableOpacity>
 
-                        <TouchableOpacity style={styles.roundButton}
+                        <TouchableOpacity style={styles.roomScanButton}
+                            onPress={()=> this.props.navigation.navigate("ObjectSelect")}
+                            >
+                            <Icon
+                                name="plus"
+                                size={40}
+                                color="white"
+                                style={{margin:0}}
+                            />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.roomScanButton}
                             onPress={()=> {
                                 console.log("SAVED");
                                 
@@ -80,10 +81,10 @@ export default class Room extends Component{
                             }}
                             >
                             <Icon
-                                name="fa-bookmark"
+                                name="save"
                                 size={40}
                                 color="white"
-                                style={{margin:8}}
+                                style={{margin:0}}
                             />
                         </TouchableOpacity>
 

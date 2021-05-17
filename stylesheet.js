@@ -75,14 +75,17 @@ const styles = StyleSheet.create({
   },
 
 
-  roundButton: {
+  roomScanButton: {
 
     backgroundColor: Colors.colorA,
-    margin: 30,
-    height:50,
-    width: 50,
-    //justifyContent: 'center',
-    //alignContent: 'center',
+    marginBottom: 20,
+    height:80,
+    width: 80,
+    opacity:0.55,
+    padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 45,
   },
 
   roundButton2: {
