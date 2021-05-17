@@ -11,7 +11,7 @@ export default class HeaderHomeButton extends React.Component {
             <Button
             onPress = {this.props.onPress}
             color="#fff"
-            buttonStyle={{backgroundColor: Colors.colorA, padding: 16}}
+            buttonStyle={{backgroundColor: Colors.colorA, padding: 6, marginRight: 6}}
             icon={
             <Icon
                 name="home"

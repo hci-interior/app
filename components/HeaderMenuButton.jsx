@@ -12,7 +12,7 @@ export default class HeaderMenuButton extends React.Component {
             <Button
               onPress = {this.props.onPress}
               color="#fff"
-              buttonStyle={{backgroundColor: Colors.colorA, padding: 16}}
+              buttonStyle={{backgroundColor: Colors.colorA, padding: 8, marginLeft: 6}}
               icon={
                 <Icon
                     name="bars"
