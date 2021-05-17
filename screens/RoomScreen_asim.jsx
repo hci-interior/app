@@ -1,9 +1,10 @@
 import React from 'react';
 import {Component} from 'react';
-import { ImageBackground, View, TouchableOpacity, StyleSheet, Image} from 'react-native';
+import { ImageBackground, View, TouchableOpacity, StyleSheet, Image, Alert} from 'react-native';
 import { Text, Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from '../stylesheet';
+
 
 export default class Room extends Component{
     constructor(props){
@@ -36,9 +37,8 @@ export default class Room extends Component{
                 
                 </View>
                 
-
-                    <View  style={{width: '100%', height: '20%',alignItems: "center"}}>
-                         <TouchableOpacity style={styles.roundButton}
+                    <View  style={{width: '100%', height: '20%',alignItems: "center", justifyContent:"center", flexDirection:"row"}}>
+                        <TouchableOpacity style={styles.roundButton}
                             onPress={()=> this.props.navigation.navigate("ObjectSelect")}
                             >
                             <Icon
@@ -47,7 +47,47 @@ export default class Room extends Component{
                                 color="white"
                                 style={{margin:8}}
                             />
+                        
                         </TouchableOpacity>
+                        <TouchableOpacity style={styles.roundButton}
+                            onPress={()=> {
+                                this.ary=[];
+                                console.log("ARRAY AFTER DELETE = " + this.ary);
+                                this.props.route.params.object_img = undefined;
+                                this.setState({});
+                                this.props.navigation.navigate('Room');
+                            }}
+                            >
+                            <Icon
+                                name="fa-trash-o"
+                                size={40}
+                                color="white"
+                                style={{margin:8}}
+                            />
+                        </TouchableOpacity>
+
+                        <TouchableOpacity style={styles.roundButton}
+                            onPress={()=> {
+                                console.log("SAVED");
+                                
+                                Alert.alert(
+                                  "Saved!",
+                                  "Your Room has been saved",
+                                  [
+                                    { text: "OK", onPress: () => console.log("OK Pressed") }
+                                  ]
+                                );
+                            }}
+                            >
+                            <Icon
+                                name="fa-bookmark"
+                                size={40}
+                                color="white"
+                                style={{margin:8}}
+                            />
+                        </TouchableOpacity>
+
+                        
                     </View>
                 </ImageBackground>
             </View>
