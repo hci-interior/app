@@ -78,7 +78,7 @@ const styles = StyleSheet.create({
   roundButton: {
 
     backgroundColor: Colors.colorA,
-    margin: 50,
+    margin: 30,
     height:50,
     width: 50,
     //justifyContent: 'center',
