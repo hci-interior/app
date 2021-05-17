@@ -1,23 +1,22 @@
 import * as React from 'react'
 import {
-  StyleSheet,
   Text,
   View,
-  Platform,
   RefreshControl,
   Switch,
+  Platform,
 } from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import styles from '../stylesheet';
 import { SettingsScreen, SettingsData, Chevron } from 'react-native-settings-screen'
 
 const fontFamily = Platform.OS === 'ios' ? 'Avenir' : 'sans-serif'
 
 const renderAccount = () => (
-  <View style={styles.accountContainer}>
+  <View style={styles.settingsAccountContainer}>
     <View style={{ flex: 1 }}>
-      <Text style={styles.accountTitle}>Testuser*in</Text>
-      <Text style={styles.accountSubtitle}>testuser@pexample.com</Text>
+      <Text style={styles.settingsAccountTitle}>Testuser</Text>
+      <Text style={styles.settingsAccountSubtitle}>testuser@pexample.com</Text>
     </View>
     <Chevron />
   </View>
@@ -37,44 +36,25 @@ export default class OurSettingsScreen extends React.Component {
         'These settings have currently no effect.',
       rows: [
         {
-          title: 'A row',
-          showDisclosureIndicator: true,
-        },
-        { title: 'A non-tappable row' },
-        {
-          title: 'This row has a',
-          subtitle: 'Subtitle',
+          title: 'Secret',
           showDisclosureIndicator: true,
         },
         {
-          title: 'Long title. So long long long long long long long',
-          subtitle:
-            'And so is the subtitle. Even longer longer longer longer longer',
+          title: 'Preferred algorithms',
+          subtitle: 'OpenObjectsO',
+          showDisclosureIndicator: true,
         },
         {
-          title: 'Switch',
+          title: 'Autoconnect to OpenObjectsO',
           renderAccessory: () => <Switch value onValueChange={() => {}} />,
         },
         {
-          title: 'Text',
+          title: 'Type',
           renderAccessory: () => (
-            <Text style={{ color: '#999', marginRight: 6, fontSize: 18 }}>
-              Maybe
+            <Text style={{ color: '#887', marginRight: 6, fontSize: 18 }}>
+              Organization
             </Text>
           ),
-        },
-        {
-          title: 'Custom view',
-          renderAccessory: () => (
-            <View
-              style={{
-                width: 30,
-                height: 30,
-                backgroundColor: "lightblue",
-              }}
-            />
-          ),
-          showDisclosureIndicator: true,
         },
       ],
     },
@@ -83,20 +63,20 @@ export default class OurSettingsScreen extends React.Component {
       header: 'App settings'.toUpperCase(),
       rows: [
         {
-          title: 'Dolor Nullam',
+          title: 'GPU settings',
           showDisclosureIndicator: true,
         },
         {
-          title: 'Nulla vitae elit libero',
+          title: 'Screen orientation',
           renderAccessory: () => (
             <Text style={{ color: '#999', marginRight: 6, fontSize: 18 }}>
-              Dapibus
+              both
             </Text>
           ),
         },
         {
           title: 'Enable automatic scan',
-          subtitle: 'Affects battery lifetime',
+          subtitle: 'Affects battery life',
           renderAccessory: () => (
             <Text style={{ color: '#999', marginRight: 6, fontSize: 18 }}>
               Yes
@@ -112,6 +92,19 @@ export default class OurSettingsScreen extends React.Component {
               name="tree"
               size={32}
               color="black"
+            />
+          ),
+          showDisclosureIndicator: true,
+        },
+        {
+          title: 'App color',
+          renderAccessory: () => (
+            <View
+              style={{
+                width: 30,
+                height: 30,
+                backgroundColor: "#344323",
+              }}
             />
           ),
           showDisclosureIndicator: true,
@@ -152,7 +145,7 @@ export default class OurSettingsScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.settingsContainer}>
         <SettingsScreen
           data={this.settingsData}
           globalTextStyle={{ fontFamily }}
@@ -173,35 +166,3 @@ export default class OurSettingsScreen extends React.Component {
   }
 }
 
-const statusBarHeight = Platform.OS === 'ios' ? 35 : 0
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-
-  accountContainer: {
-    marginTop: 40,
-    marginBottom: 50,
-    paddingVertical: 20,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: 'white',
-    borderTopWidth: StyleSheet.hairlineWidth,
-    borderBottomWidth: StyleSheet.hairlineWidth,
-    borderColor: '#ccc',
-    flexDirection: 'row',
-  },
-  accountTitle: {
-    fontFamily,
-    color: 'black',
-    fontSize: 24,
-  },
-  accountSubtitle: {
-    fontFamily,
-    color: '#999',
-    fontSize: 14,
-  },
-})

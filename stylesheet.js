@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native';
-import { styleSheets } from 'min-document';
+import { StyleSheet, Platform } from 'react-native';
 import {Colors} from './colors.js';
 
+const fontFamily = Platform.OS === 'ios' ? 'Avenir' : 'sans-serif'
 
 const styles = StyleSheet.create({
   container: {
@@ -174,6 +174,38 @@ const styles = StyleSheet.create({
     borderColor:'white',
   },
 
+  settingsContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
+  settingsAccountContainer: {
+    marginTop: 40,
+    marginBottom: 50,
+    padding: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
+    borderTopWidth: StyleSheet.hairlineWidth,
+    borderBottomWidth: StyleSheet.hairlineWidth,
+    borderColor: '#ccc',
+    flexDirection: 'row',
+
+  },
+  settingsAccountTitle: {
+    fontFamily,
+    color: 'black',
+    fontSize: 24,
+  },
+  settingsAccountSubtitle: {
+    fontFamily,
+    color: '#999',
+    fontSize: 14,
+  },
+
 });
+
+const statusBarHeight = Platform.OS === 'ios' ? 35 : 0
 
 export default styles;
