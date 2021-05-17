@@ -156,6 +156,7 @@ const styles = StyleSheet.create({
   containerScan: {
     flex: 1,
     flexDirection: 'column',
+    justifyContent: 'flex-end',
     backgroundColor: 'black',
   },
   preview: {
@@ -163,15 +164,14 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
-  capture: {
+  cancel: {
     flex: 0,
     backgroundColor: 'transparent',
-    padding: 15,
-    paddingHorizontal: 20,
+    padding:  5,
+   paddingHorizontal: 50,
+    alignItems: 'center',
     alignSelf: 'center',
-    margin: 20,
-    borderWidth: 1,
-    borderColor:'white',
+    margin: 15,
   },
 
   settingsContainer: {
