@@ -16,7 +16,7 @@ const renderAccount = () => (
   <View style={styles.settingsAccountContainer}>
     <View style={{ flex: 1 }}>
       <Text style={styles.settingsAccountTitle}>Testuser</Text>
-      <Text style={styles.settingsAccountSubtitle}>testuser@pexample.com</Text>
+      <Text style={styles.settingsAccountSubtitle}>testuser@example.com</Text>
     </View>
     <Chevron />
   </View>
