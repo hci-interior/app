@@ -14,7 +14,10 @@ Repository enthält:
 [React Native]
 
 *API-Version*:	
-[Android / iOS ]
+[Android / iOS]
+
+*Kompiliert für*:
+[Android]
 
 *Gerät(e), auf dem(denen) getestet wurde*:  
 [Pixel2, iPhone 6s]
