@@ -4,24 +4,26 @@ Lehrveranstaltung: http://vda.univie.ac.at/Teaching/HCI/21s
 - Gruppe: 1
 - Team: 110
 - Projektthema: Interior Designer
+- Projekt-Übersicht: https://hci-interior.github.io 
 
 Repository enthält:
 
    - Sourcecode der App
-   - Projekt-Übersicht als org-File (~/docs/index.org~) sowie html-Export davon (https://dominikpegler.github.io/interior-designer) davon 
-   - Präsentationen ([[https://en.wikipedia.org/wiki/Beamer_(LaTeX)][beamer]]) als org-Files (~/docs/~) sowie pdf-Exporte davon
-   - sonstige Unterlagen zu den Aufgaben der LV
+  
+*Framework*:	
+[React Native]
 
+*API-Version*:	
+[Android / iOS ]
 
-* Implementierung
-Framework: [React Native]
+*Gerät(e), auf dem(denen) getestet wurde*:  
+[Pixel2, iPhone 6s]
 
-API-Version: [ ... ]
+*Externe Libraries und Frameworks*:  
+react-navigation, react-native-elements, react-native-settings-screen, react-native-vector-icons, react-native-popup-dialog, react-native-splash-screen, expo-camera, react-native-orientation
 
-Gerät(e), auf dem(denen) getestet wurde: [ ... ]
+*Dauer der Entwicklung*:  
+[ 3 Personen jeweils ca. 5 Tage ]
 
-Externe Libraries und Frameworks: [ ... ]
-
-Dauer der Entwicklung: [ XX Stunden ]
-
-Weitere Anmerkungen: [ ... ]
+Weitere Anmerkungen:  
+[ ... ]
