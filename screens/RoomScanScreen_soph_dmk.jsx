@@ -62,19 +62,6 @@ export default function RoomScanScreen(props) {
                     style={{margin:8}}
                 />
             </TouchableOpacity>
-
-          {/* <TouchableOpacity
-            style={styles.button}
-            onPress={() => {
-              setType(
-                type === Camera.Constants.Type.back
-                  ? Camera.Constants.Type.front
-                  : Camera.Constants.Type.back
-              );
-            }}>
-            <Text style={styles.text}> Flip </Text>
-          </TouchableOpacity> */}
-        {/* </View> */}
       </Camera>
     </View>
   );
