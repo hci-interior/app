@@ -1,6 +1,6 @@
 import React from 'react';
 import {Component} from 'react';
-import { FlatList, TouchableOpacity, ImageBackground, View, Button, StyleSheet, Image} from 'react-native';
+import { FlatList, TouchableOpacity, View, Image} from 'react-native';
 import { Text, Input } from 'react-native-elements';
 import styles from '../stylesheet';
 

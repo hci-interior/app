@@ -5,7 +5,7 @@ import HomeScreen from './screens/HomeScreen_soph_dmk';
 import RoomSelectScreen from './screens/RoomSelectScreen_asim_dmk';
 import RoomScreen from './screens/RoomScreen_asim';
 import ObjectSelectScreen from './screens/ObjectSelectScreen_asim_dmk';
-import RoomScanScreen from './screens/RoomScanScreen_sophia';
+import RoomScanScreen from './screens/RoomScanScreen_soph_dmk';
 import RoomScanConfirmScreen from './screens/RoomScanConfirmScreen_soph_dmk';
 import { createStackNavigator } from '@react-navigation/stack';
 import {Colors} from './colors.js';
