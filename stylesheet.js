@@ -15,7 +15,9 @@ const styles = StyleSheet.create({
   homeScreenContainer: {
     flex: 1,
     backgroundColor: '#ffffff',
-    marginTop: 0
+    marginTop: 0,
+    width: '100%',
+    height: '100%',
   },
 
   title: {
@@ -39,6 +41,8 @@ const styles = StyleSheet.create({
   backgroundImage: {
     flex: 1,
     justifyContent: 'flex-end',
+    alignItems: "center",
+    resizeMode: 'cover', // or 'stretch'
     marginBottom: 0,
     width: '100%',
     height: '100%'
@@ -59,7 +63,9 @@ const styles = StyleSheet.create({
     borderTopWidth:0.5,
     borderColor:Colors.white,
     backgroundColor: "white",
-    opacity: 0.7
+    opacity: 0.7,
+    width: "100%",
+    height:"33%",
   },
 
   buttonText_sophia: {
@@ -68,10 +74,12 @@ const styles = StyleSheet.create({
   },
 
 
-  bottom: {
+  homescreen_buttons: {
     flex: 1,
     justifyContent: 'flex-end',
-    marginBottom: 2
+    width: "100%",
+    height:"25%",
+    marginBottom: 1
   },
 
 

@@ -26,46 +26,38 @@ class HomeScreen extends React.Component {
                     <StatusBar style="auto"/>
 
                     <Image
-                        style={{marginTop:70, marginRight:70, width:260,height: 180, alignSelf:"center"}}
+                        style={{flex: 1, width: "75%"}}
+                        resizeMode="contain"
                         source={require("../assets/logo_soph.png")}
                     />
 
-                    <View style={styles.bottom}>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomScan')}>
-                        <View style={styles.button_sophia}>
+                    <View style={styles.homescreen_buttons}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomScan')} style={styles.button_sophia}>
                             <Icon
                                 name="video-camera"
-                                size={35}
+                                size={30}
                                 color={Colors.colorA}
                                 style={{margin:2}}
                             />
                             <Text style={styles.buttonText_sophia}>Scan New Room</Text>
-                        </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomSelect')}>
-                        <View style={styles.button_sophia}>
-
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('RoomSelect')} style={styles.button_sophia}>
                            <Icon
                                 name="cube"
-                                size={40}
+                                size={30}
                                 color={Colors.colorA}
                                 style={{margin:2}}
                             />
-
                             <Text style={styles.buttonText_sophia}>My Rooms</Text>
-                        </View>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ObjectSelect')}>
-                        <View style={styles.button_sophia}>
-
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ObjectSelect')} style={styles.button_sophia}>
                             <Icon
                                     name="diamond"
-                                    size={35}
+                                    size={25}
                                     color={Colors.colorA}
                                     style={{margin:2}}
                                 />
                             <Text style={styles.buttonText_sophia}>My Objects</Text>
-                        </View>
                     </TouchableOpacity>
                     </View>
                 </ImageBackground>
