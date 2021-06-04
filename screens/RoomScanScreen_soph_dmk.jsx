@@ -41,11 +41,24 @@ class RoomScanScreen extends React.Component {
   //return (
 
   componentDidMount(){
-      // Orientation.lockToLandscape();
        // Start counting when the page is loaded
        this.timeoutHandle = setTimeout(()=>{
            this.props.navigation.navigate('RoomScanConfirm')
        }, 15000);
+    
+        (async () => {
+          const { status } = await Camera.requestPermissionsAsync();
+          this.setState({hasPermission: status});
+        })();
+        // }, []);
+
+        if (this.state.hasPermission === null) {
+          return <View />;
+        }
+        if (this.state.hasPermission === false) {
+          return <Text>No access to camera</Text>;
+        }
+
    }
    
    componentWillUnmount(){
@@ -53,20 +66,6 @@ class RoomScanScreen extends React.Component {
    }
 
   render() {
-
-    // useEffect(() => {
-    //   (async () => {
-    //     const { status } = await Camera.requestPermissionsAsync();
-    //     this.setState({hasPermission: status});
-    //   })();
-    // }, []);
-
-    // if (this.state.hasPermission === null) {
-    //   return <View />;
-    // }
-    // if (this.state.hasPermission === false) {
-    //   return <Text>No access to camera</Text>;
-    // }
 
     return(
     <View style={styles.containerScan}>
