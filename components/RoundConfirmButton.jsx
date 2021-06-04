@@ -12,7 +12,7 @@ export default class RoundConfirmButton extends React.Component {
         >
             <Icon
                 name="check"
-                size={40}
+                size={45}
                 color="white"
                 style={{margin:8}}
             />

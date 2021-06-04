@@ -12,7 +12,7 @@ export default class RoundButton extends React.Component {
         >
             <Icon
                 name="close"
-                size={40}
+                size={45}
                 color="white"
                 style={{margin:8}}
             />

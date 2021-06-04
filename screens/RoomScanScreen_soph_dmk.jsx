@@ -1,37 +1,80 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
 import styles from '../stylesheet';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-export default function RoomScanScreen(props) {
-  const [hasPermission, setHasPermission] = useState(null);
-  const [type, setType] = useState(Camera.Constants.Type.back);
 
-  useEffect(() => {
-    (async () => {
-      const { status } = await Camera.requestPermissionsAsync();
-      setHasPermission(status === 'granted');
-    })();
-  }, []);
+class RoomScanScreen extends React.Component {
+//export default function RoomScanScreen(props) {
 
-  if (hasPermission === null) {
-    return <View />;
+  constructor(props) {
+    super(props);
+
+    this.state = {
+        hasPermission: null,
+        type:Camera.Constants.Type.back,
+    }
   }
-  if (hasPermission === false) {
-    return <Text>No access to camera</Text>;
-  }
+  
+  // const [hasPermission, setHasPermission] = useState(null);
+  // const [type, setType] = useState(Camera.Constants.Type.back);
 
-  setTimeout(()=>{
-      props.navigation.navigate('RoomScanConfirm')
-  }, 20000);
+  // useEffect(() => {
+  //   (async () => {
+  //     const { status } = await Camera.requestPermissionsAsync();
+  //     setHasPermission(status === 'granted');
+  //   })();
+  // }, []);
+
+  // if (hasPermission === null) {
+  //   return <View />;
+  // }
+  // if (hasPermission === false) {
+  //   return <Text>No access to camera</Text>;
+  // }
+
+  // setTimeout(()=>{
+  //     props.navigation.navigate('RoomScanConfirm')
+  // }, 20000);
    
-  return (
-    <View style={styles.containerScan}>
-      <Camera style={styles.preview} type={type}>
-        {/* <View style={styles.buttonContainer}> */}
+  //return (
 
-        <View style={{flex:1,flexDirection:'row',alignItems:'center', justifyContent:'center', backgroundColor:'transparent'}}>
+  componentDidMount(){
+      // Orientation.lockToLandscape();
+       // Start counting when the page is loaded
+       this.timeoutHandle = setTimeout(()=>{
+           this.props.navigation.navigate('RoomScanConfirm')
+       }, 15000);
+   }
+   
+   componentWillUnmount(){
+       clearTimeout(this.timeoutHandle); // This is just necessary in the case that the screen is closed before the timeout fires, otherwise it would cause a memory leak that would trigger the transition regardless, breaking the user experience.
+   }
+
+  render() {
+
+    // useEffect(() => {
+    //   (async () => {
+    //     const { status } = await Camera.requestPermissionsAsync();
+    //     this.setState({hasPermission: status});
+    //   })();
+    // }, []);
+
+    // if (this.state.hasPermission === null) {
+    //   return <View />;
+    // }
+    // if (this.state.hasPermission === false) {
+    //   return <Text>No access to camera</Text>;
+    // }
+
+    return(
+    <View style={styles.containerScan}>
+      <Camera style={styles.preview} type={this.state.type}>
+        <Text style={{ fontSize: 18, fontWeight: "bold",color: 'white', marginTop:"5%"}}>
+                  Please turn around 360°
+        </Text>
+        <View style={{flex:1,flexDirection:'row',alignItems:'center', justifyContent:"center", backgroundColor:'transparent'}}>
                  <Icon
                     name="angle-double-left"
                     size={60}
@@ -39,8 +82,9 @@ export default function RoomScanScreen(props) {
                     style={{
                         flex:1,
                         paddingLeft:30,
-                        alignContent:'flex-start',
-                    }}/>
+                        justifyContent:"flex-start",
+                    }}
+                  />
                 <Icon
                     name="angle-double-right"
                     size={60}
@@ -48,12 +92,11 @@ export default function RoomScanScreen(props) {
                     style={{
                         flex:0,
                         paddingRight:30,
-                        alignContent:'flex-end',
+                        justifyContent:"flex-end",
                     }}
-                   />
-
-            </View>
-            <TouchableOpacity onPress={() => props.navigation.navigate('Home')} style={styles.cancel}>
+                 />
+          </View>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('Home')} style={styles.cancel}>
                 <Text style={{ fontSize: 20, color: 'white', }}> Cancel Scan </Text>
                 <Icon
                     name="close"
@@ -66,3 +109,7 @@ export default function RoomScanScreen(props) {
     </View>
   );
 }
+}
+
+export default RoomScanScreen;
+

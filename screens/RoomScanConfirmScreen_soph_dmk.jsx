@@ -1,8 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import styles from '../stylesheet';
-import { View, TouchableOpacity, Image } from 'react-native';
-import { Text, Input } from 'react-native-elements';
+import { View, Alert, Image } from 'react-native';
+import { Text } from 'react-native-elements';
 import RoundCancelButton from '../components/RoundCancelButton'
 import RoundConfirmButton from '../components/RoundConfirmButton'
 import Dialog, { DialogFooter, DialogButton, DialogContent } from 'react-native-popup-dialog';
@@ -27,25 +26,34 @@ class RoomScanConfirmScreen extends React.Component {
         const sketchIndex = this.getRandomInt(3);
         
         return(
-            <View>
+            <View
+            style={{flex:1, width: "100%", height:"100%",flexDirection:'column', justifyContent:"space-evenly" }}
+            resizeMode="contain"
+            >
                 <StatusBar style="auto" />
                 <Text h3 style={{textAlign:'center', margin:16}}>Is this your room?</Text>
                 
                 <Image
-                    style={{ width: 340, height: 340, alignSelf:"center"}}
+                    style={{ flex:1, height: "55%", alignSelf: "center"}}
+                    resizeMode="contain"
                     source={this.state.room_sketches[sketchIndex]}
                 />
 
-                <View style={{flexDirection:'row', justifyContent:"space-evenly"}}>
+                <View style={{flexDirection:'row', maxHeight:"40%", justifyContent:"space-evenly", marginBottom: "5%"}}>
                     <RoundCancelButton
+                        resizeMode="contain"
                         onPress={() => {
                             this.props.navigation.navigate('Home')
                         }}
                     
                     />                
-                    <RoundConfirmButton                    
+                    <RoundConfirmButton
+                        resizeMode="contain"                 
                         onPress={() => {
-                            //{this.setState({ confirm_visible: true });
+                            Alert.alert(
+                                "Saved!",
+                                "Saved to My Rooms!",
+                              );
                             this.props.navigation.navigate('Home')
                             }
                         }
