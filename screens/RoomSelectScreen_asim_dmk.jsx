@@ -54,7 +54,7 @@ export default class RoomSelectScreen extends Component{
                 autoCorrect={false}
                 onChangeText={text => this.searchFilterFunction(text)}
                 status='info'
-                placeholder='Search room'
+                placeholder='Enter search term'
                 style={{
                     borderRadius: 18,
                     borderColor: '#333',

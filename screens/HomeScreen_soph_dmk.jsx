@@ -50,7 +50,7 @@ class HomeScreen extends React.Component {
                             />
                             <Text style={styles.buttonText_sophia}>My Rooms</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ObjectSelect')} style={styles.button_sophia}>
+                    <TouchableOpacity onPress={() => this.props.navigation.navigate('ObjectLibrary')} style={styles.button_sophia}>
                             <Icon
                                     name="diamond"
                                     size={25}

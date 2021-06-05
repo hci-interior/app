@@ -4,7 +4,7 @@ import { FlatList, TouchableOpacity, ImageBackground, View, Button, StyleSheet, 
 import { Text, Input } from 'react-native-elements';
 import styles from '../stylesheet';
 
-export default class ObjectSelectScreen extends Component{
+export default class ObjectLibraryScreen extends Component{
 
 
     constructor(props) {

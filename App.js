@@ -5,6 +5,7 @@ import HomeScreen from './screens/HomeScreen_soph_dmk';
 import RoomSelectScreen from './screens/RoomSelectScreen_asim_dmk';
 import RoomScreen from './screens/RoomScreen_asim';
 import ObjectSelectScreen from './screens/ObjectSelectScreen_asim_dmk';
+import ObjectLibraryScreen from './screens/ObjectLibraryScreen';
 import RoomScanScreen from './screens/RoomScanScreen_soph_dmk';
 import RoomScanConfirmScreen from './screens/RoomScanConfirmScreen_soph_dmk';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -32,9 +33,9 @@ class App extends React.Component {
           {id:7,name:"Kunde Rennweg",img:require('./assets/rooms/room5.png')},
         ],
         objects:[
-          {id:0,name:'Bett von willhaben',img:require('./assets/objects/bed1.png')},
+          {id:0,name:'Bett A',img:require('./assets/objects/bed1.png')},
           {id:1,name:'Doppelbett 2',img:require('./assets/objects/bed2.png')},
-          {id:2,name:'Bett (verkauft)',img:require('./assets/objects/bed3.png')},
+          {id:2,name:'Bett B',img:require('./assets/objects/bed3.png')},
           {id:3,name:'Bett grau',img:require('./assets/objects/bed4.png')}, 
           {id:4,name:'Sessel 1',img:require('./assets/objects/chair.png')},
           {id:5,name:'Sessel gelb',img:require('./assets/objects/chair2.png')},
@@ -86,7 +87,7 @@ class App extends React.Component {
         name="RoomSelect"
         component={RoomSelectScreen}
         options={({ navigation }) => ({
-          title: 'Selecting a room',
+          title: 'Select a room',
           headerTitleAlign:'center',
           headerStyle: {
             backgroundColor: Colors.colorA,
@@ -153,7 +154,33 @@ class App extends React.Component {
         initialParams={{objects:this.state.objects}}
 
         options={({ navigation }) => ({
-          title: 'Selecting an object',
+          title: 'Select an object',
+          headerTitleAlign:'center',
+          headerStyle: {
+            backgroundColor: Colors.colorA,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            // fontWeight: 'bold',
+          },
+          headerShown: true,
+          headerRight: () => (
+          <HeaderHomeButton
+            onPress={() => navigation.navigate('Home')}
+          />
+          ),
+
+        })}
+
+      />
+
+      <Stack.Screen
+        name="ObjectLibrary"
+        component={ObjectLibraryScreen}
+        initialParams={{objects:this.state.objects}}
+
+        options={({ navigation }) => ({
+          title: 'My objects',
           headerTitleAlign:'center',
           headerStyle: {
             backgroundColor: Colors.colorA,
@@ -187,7 +214,7 @@ class App extends React.Component {
           headerTitleStyle: {
             // fontWeight: 'bold',
           },
-          headerShown: true,
+          headerShown: false,
           headerRight: () => (<HeaderHomeButton
             onPress={() => navigation.navigate('Home')}
           />),
