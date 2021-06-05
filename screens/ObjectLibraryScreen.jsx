@@ -74,7 +74,7 @@ export default class ObjectLibraryScreen extends Component{
                     data={this.state.filteredObjects}
                     renderItem={({ item }) => (
                           
-                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Room', {object_id:item.id,object_img:item.img,object_name:item.name})}>
+                        <TouchableOpacity onPress={() => this.props.navigation.navigate('Object', {object_id:item.id,object_img:item.img,object_name:item.name})}>
 
                             <View
                                 style={{

@@ -4,6 +4,7 @@ import {NavigationContainer, DefaultTheme } from '@react-navigation/native';
 import HomeScreen from './screens/HomeScreen_soph_dmk';
 import RoomSelectScreen from './screens/RoomSelectScreen_asim_dmk';
 import RoomScreen from './screens/RoomScreen_asim';
+import ObjectScreen from './screens/ObjectScreen';
 import ObjectSelectScreen from './screens/ObjectSelectScreen_asim_dmk';
 import ObjectLibraryScreen from './screens/ObjectLibraryScreen';
 import RoomScanScreen from './screens/RoomScanScreen_soph_dmk';
@@ -131,6 +132,28 @@ class App extends React.Component {
         component={RoomScreen}
         options={({ navigation }) => ({
           title: '',
+          headerTitleAlign:'center',
+          headerStyle: {
+            backgroundColor: Colors.colorA,
+          },
+          headerTintColor: 'white',
+          headerTitleStyle: {
+            // fontWeight: 'bold',
+          },
+          headerShown: true,
+          headerRight: () => (<HeaderHomeButton
+            onPress={() => navigation.navigate('Home')}
+         
+          />),
+        })}
+        //initialParams={}
+      />
+
+      <Stack.Screen
+        name="Object"
+        component={ObjectScreen}
+        options={({ navigation }) => ({
+          title: 'Object details',
           headerTitleAlign:'center',
           headerStyle: {
             backgroundColor: Colors.colorA,
