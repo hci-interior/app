@@ -63,7 +63,6 @@ class App extends React.Component {
   render(){
 
     return(
-
     <NavigationContainer >
     <Stack.Navigator initialRouteName="Home" headerMode="screen">
       <Stack.Screen

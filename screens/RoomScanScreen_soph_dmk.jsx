@@ -3,7 +3,7 @@ import { Text, View, TouchableOpacity } from 'react-native';
 import { Camera } from 'expo-camera';
 import styles from '../stylesheet';
 import Icon from 'react-native-vector-icons/FontAwesome';
-
+import ProgressBar from '../components/ProgressBar.jsx';
 
 class RoomScanScreen extends React.Component {
 //export default function RoomScanScreen(props) {
@@ -47,6 +47,7 @@ class RoomScanScreen extends React.Component {
     return(
     <View style={styles.containerScan}>
       <Camera style={styles.preview} type={this.state.type}>
+        <ProgressBar></ProgressBar>
         <Text style={{ fontSize: 18, fontWeight: "bold",color: 'white', marginTop:"5%"}}>
                   Please turn around 360°
         </Text>
