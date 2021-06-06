@@ -15,7 +15,7 @@ export default class HeaderMenuButton extends React.Component {
               buttonStyle={{backgroundColor: Colors.colorA, padding: 8, marginLeft: 6}}
               icon={
                 <Icon
-                    name="bars"
+                    name="cog"// "bars"
                     size={18}
                     color="white"
                     style={{margin:0, padding:0}}
