@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {StyleSheet, View, Animated} from 'react-native';
-import { colors } from 'react-native-elements';
 import {Colors} from '../colors.js';
 
 export default class ProgressBar extends Component {
@@ -17,6 +16,7 @@ export default class ProgressBar extends Component {
     });
     
         Animated.timing(this.animation,{
+            useNativeDriver:true,
             toValue: 100,  //value at which it need to reach for end of the progress bar
             duration: 13000,  //duration till the progress bar will continue
             }).start();
@@ -41,11 +41,11 @@ export default class ProgressBar extends Component {
 const progressStyles = StyleSheet.create({
     containerStyle: {
         width: "80%",
-        height: "1.5em",
+        height: 15,
         paddingLeft:"1%",
         paddingRight:"1%",
-        borderRadius: "1.5em",
-        marginTop: "1%",
+        borderRadius: 15,
+        marginTop: "5%",
         justifyContent: "center",
         alignSelf: "center",
         backgroundColor:"#b4ca9b",
@@ -53,13 +53,13 @@ const progressStyles = StyleSheet.create({
     },
     innerStyle:{
         width: "80%",
-        height: "1.2em",
-        borderRadius: "0.8em",
+        height: 12,
+        borderRadius: 8,
         backgroundColor: "#75964f",
     },
     label:{
         fontSize:12,
-        color: colors.colorA,
+        color: Colors.colorA,
         position: "absolute",
         zIndex: 1,
         alignSelf: "center",
